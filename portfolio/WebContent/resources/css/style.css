@@ -1,5 +1,5 @@
 /* ===== GOOGLE FONTS ===== */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap");
 
 /*===== VARIABLES CSS =====*/
 :root {
@@ -9,19 +9,26 @@
 
 /*===== Colores =====*/
 :root {
-  --first-color: #5361ff;
+  --first-color: #00d9e4;
   --white-color: #fafaff;
-  --dark-color: #2a3b47;
-  --text-color: #697477;
+  --text-color: #fff;
+  --dark-color: #091921;
+  --text-animation-color: crimson;
+  --black-color: black;
+  --nav-view-color: rgba(255, 255, 255, 0.3);
+  --text-view-color: rgba(240, 248, 255, 0.021);
 }
 
 /*===== font size =====*/
 :root {
-  --body-font: "Montserrat", sans-serif;
-  --big-font-size: 6.25rem;
-  --h2-font-size: 1.25rem;
-  --normal-font-size: 2rem;
-  --small-font-size: 0.813rem;
+  --title-size: 8rem;
+  --big-font-size: 4rem;
+  --a-font-size: 2.5rem;
+  --butt-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --normal-font-size: 1.8rem;
+  --small-font-size: 1.4rem;
+  --view-font-size: 12rem;
 }
 
 /*===== Marginse =====*/
@@ -41,65 +48,263 @@
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 html {
   font-size: 10px;
-  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 ul {
   list-style: none;
 }
 a {
-  text-decoration: none;
+  text-decoration: none; /* 밑줄 지우기 */
 }
 /*===== CLASS CSS =====*/
 /*===== header =====*/
+
+/*===== LAYOUT =====*/
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*===== Header =====*/
+
+/*web title*/
+.brand h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+.brand h1 span {
+  color: var(--first-color);
+}
+/*nav layout*/
 #header {
-  position: fixed;
+  position: fixed; /*고정된 위치 설정 상위요소에 영향을 받지 않는다*/
   z-index: var(--z-fixed);
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 100vw; /* view port 너비 */
   height: auto;
 }
 #header .header {
-  min-height: 6vh;
-  background-color: rgba(30, 30, 30, 0.24);
-  transition: 0.3s ease background-color;
+  min-height: 8vh; /* 요소의 최소높이 */
+  background-color: rgba(31, 30, 30, 0.14); /*nav-bar 투명도 */
 }
 #header .nav-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
-  max-width: 1194px;
+  justify-content: space-between; /* 요소 양끝으로 배치*/
+  max-width: 1294px;
   padding: 0 10px;
 }
+/* responsive hamburger view*/
 #header .nav-list ul {
-  list-style: none;
   position: absolute;
-  background-color: rgb(31, 30, 30);
+  background-color: var(--nav-view-color);
   width: 100vw;
   height: 100vh;
-  left: 100%;
+  /*left: 100%;*/
+  left: 0;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex; /* flex 로 바꾸고 옆으로 나열*/
+  justify-content: center; /* a 태그 중앙배치 */
   align-items: center;
+  flex-direction: column; /* a 태그 세로정열 */
   z-index: 1;
-  overflow-x: hidden; /* 가로 스크롤바가 나타나지 않을 뿐 브라우저에 따라 세로 스크롤바는 나타남 */
-  transition: 0.5s ease left;
+  overflow: hidden;
 }
-#header .nav-list ul.active {
-  left: 0%; /* hamburger 화면 가득 채움 */
+#header .nav-list ul a {
+  font-size: var(--a-font-size);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  display: block;
+  color: var(--text-animation-color);
+  padding: 20px;
 }
-/*===== LAYOUT =====*/
+/* view text shadow */
+#header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgba(240, 248, 255, 0.021);
+  font-size: var(--view-font-size);
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+/* view li:hover*/
+#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(0.5);
+  letter-spacing: initial; /*기본값*/
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  color: white;
+}
+/*hamburger button*/
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid var(--first-color);
+  border-radius: 50%; /* 원형 만들기 */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 500;
+}
+/*hamburger info*/
+#header .hamburger .bar {
+  height: 2px; /*작대기 만들기*/
+  width: 30px;
+  background-color: var(--first-color);
+  z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: var(--first-color);
+  transition: 0.3s ease;
+  transition-property: top, bottom; /* top, bottom 트랜지션 적용*/
+}
 
-/*===== NAV =====*/
+/*===== Hero section =====*/
+
+/* img */
+#hero {
+  background-image: url(../images/j1.jpg);
+  /*background-repeat: no-repeat;*/
+  background-size: cover; /*가로 세로 비율 유지 */
+  background-position: top center; /*위치 조정  상단 가운데*/
+  position: relative; /*위치 조정 */
+  z-index: 1; /* 다른 요소보다 높게 */
+}
+/* img 투명도 처리 */
+#hero:after {
+  content: "";
+  position: absolute; /* 가장 가까운 위치 지정 조상 요소에 대해 상대적으로 배치 */
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black-color);
+  opacity: 0.7; /* 투명도 0.0~1.0 */
+  z-index: -1; /* 기본 요소의 위치보다 아래로 한다 */
+}
+/*welcome text layout*/
+#hero .hero {
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start; /*기본설정, 플렉스 컨테이너의 앞쪽에서부터 배치*/
+}
+/*Welcome text*/
+#hero h1 {
+  display: block;
+  /*width: max-content;*/
+  width: fit-content; /*text 반응형을 위한 처리 */
+  position: relative;
+  font-weight: 500;
+  font-size: var(--big-font-size);
+  /*color: var(--text-color);*/
+  color: transparent; /* animation 적용 글자색상을 없앤다 */
+  animation: text_reveal 0.5s ease forwards; /*kewframe에 의해 설정된 계산 된 값을 유지*/
+  animation-delay: 1s;
+}
+/*text delay */
+#hero h1:nth-child(1) {
+  animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+  animation: text_reveal_name 0.05s ease forwards;
+  animation-delay: 3s;
+}
+/*anition text box*/
+#hero h1 span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--first-color);
+  animation: text_reveal_box 1s ease; /* keyframes 적용이름 지정 */
+  animation-delay: 1s; /*애니메이션 1초 늦게 시작*/
+}
+/*text animation box delay*/
+#hero h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+/* ===== keyframes ===== */
+
+/*text animation box*/
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+/*100% 일 때 글자 색 (보임)*/
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+/* web title color*/
+@keyframes text_reveal_name {
+  100% {
+    color: var(--first-color);
+    font-weight: 700;
+  }
+}
+/*portpolio button*/
+#hero .cta {
+  display: inline-block;
+  color: var(--text-color);
+  background-color: transparent; /* 배경색이 없다 */
+  border: 2px solid var(--first-color);
+  padding: 10px 30px; /* 버튼 크기 조절 */
+  font-size: var(--butt-font-size);
+  text-transform: uppercase; /* 텍스트 대문자 */
+  letter-spacing: 0.1rem; /*글자 사이의 간격 */
+  margin-top: 30px; /* 버튼 상단 여백 */
+  transition: 0.3s ease; /*애니메이션 적용 f-s-f*/
+  transition-property: background-color, color; /*트랜지션 적용 속성*/
+}
+/*button hover 변화*/
+#hero .cta:hover {
+  color: var(--text-animation-color);
+  background-color: var(--first-color);
+}
 
 /*===== Show menu =====*/
 /*===== Active menu =====*/
