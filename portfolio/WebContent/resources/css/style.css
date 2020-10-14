@@ -16,13 +16,14 @@
   --text-animation-color: crimson;
   --black-color: black;
   --nav-view-color: rgba(255, 255, 255, 0.3);
+  --view-color: rgb(31, 30, 30);
   --text-view-color: rgba(240, 248, 255, 0.021);
 }
 
 /*===== font size =====*/
 :root {
   --title-size: 8rem;
-  --big-font-size: 4rem;
+  --big-font-size: 6rem;
   --a-font-size: 2.5rem;
   --butt-font-size: 2rem;
   --h2-font-size: 1.5rem;
@@ -94,7 +95,8 @@ a {
 }
 #header .header {
   min-height: 8vh; /* 요소의 최소높이 */
-  background-color: rgba(31, 30, 30, 0.14); /*nav-bar 투명도 */
+  background-color: rgba(31, 30, 30, 0.04); /*nav-bar 투명도 */
+  transition: 0.3s ease background-color; /*scroll nav-bar*/
 }
 #header .nav-bar {
   display: flex;
@@ -108,11 +110,11 @@ a {
 /* responsive hamburger view*/
 #header .nav-list ul {
   position: absolute;
-  background-color: var(--nav-view-color);
+  background-color: var(--view-color);
   width: 100vw;
   height: 100vh;
-  /*left: 100%;*/
-  left: 0;
+  left: 100%; /* hamburger view 숨김 */
+  /*left: 0;*/
   top: 0;
   display: flex; /* flex 로 바꾸고 옆으로 나열*/
   justify-content: center; /* a 태그 중앙배치 */
@@ -120,13 +122,19 @@ a {
   flex-direction: column; /* a 태그 세로정열 */
   z-index: 1;
   overflow: hidden;
+  transition: 0.7s ease left;
 }
+/*hamburger view active */
+#header .nav-list ul.active {
+  left: 20%; /* hamburger view 보임 */
+}
+
 #header .nav-list ul a {
   font-size: var(--a-font-size);
   font-weight: 500;
   letter-spacing: 0.2rem;
   display: block;
-  color: var(--text-animation-color);
+  color: var(--white-color);
   padding: 20px;
 }
 /* view text shadow */
@@ -144,11 +152,11 @@ a {
 }
 /* view li:hover*/
 #header .nav-list ul li:hover a::after {
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(1);
   letter-spacing: initial; /*기본값*/
-  margin-bottom: 0%;
-  padding-bottom: 0%;
-  color: white;
+}
+#header .nav-list ul li:hover a {
+  color: var(--text-animation-color);
 }
 /*hamburger button*/
 #header .hamburger {
@@ -163,11 +171,35 @@ a {
   justify-content: center;
   cursor: pointer;
   z-index: 500;
+  transform: scale(0.8); /* hamburger 축소 */
+  margin-right: 20px;
+}
+/*hamburger animation*/
+#header .hamburger:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: hamburger_plus 1s ease infinite; /*keyframes 이름 무제한 */
+}
+/*hamburger keyframes*/
+@keyframes hamburger_plus {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
 }
 /*hamburger info*/
 #header .hamburger .bar {
   height: 2px; /*작대기 만들기*/
   width: 30px;
+  position: relative;
   background-color: var(--first-color);
   z-index: -1;
 }
@@ -177,12 +209,26 @@ a {
   position: absolute;
   height: 100%;
   width: 100%;
-  left: 0;
+  left: 0px;
   background-color: var(--first-color);
   transition: 0.3s ease;
   transition-property: top, bottom; /* top, bottom 트랜지션 적용*/
 }
-
+/* 하단 작대기 */
+#header .hamburger .bar::after {
+  top: 8px;
+}
+/* 상단 작대기 */
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+/* hamburger click .active */
+#header .hamburger.active .bar::before {
+  bottom: 0; /*상단 작대기 사라짐*/
+}
+#header .hamburger.active .bar::after {
+  top: 0; /*하단 작대기 사라짐*/
+}
 /*===== Hero section =====*/
 
 /* img */
@@ -244,7 +290,7 @@ a {
   top: 0;
   height: 100%;
   width: 0;
-  background-color: var(--first-color);
+  background-color: var(--text-animation-color);
   animation: text_reveal_box 1s ease; /* keyframes 적용이름 지정 */
   animation-delay: 1s; /*애니메이션 1초 늦게 시작*/
 }
@@ -289,7 +335,7 @@ a {
 /*portpolio button*/
 #hero .cta {
   display: inline-block;
-  color: var(--text-color);
+  color: var(--white-color);
   background-color: transparent; /* 배경색이 없다 */
   border: 2px solid var(--first-color);
   padding: 10px 30px; /* 버튼 크기 조절 */
@@ -315,3 +361,27 @@ a {
 /*===== CONTACT =====*/
 /*===== FOOTER =====*/
 /*===== MEDIA QUERISE =====*/
+@media only screen and (min-width: 1194px) {
+  /*header*/
+  #header .hamburger {
+    display: none;
+  }
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background-color: transparent; /*기본 속성으로 만든다*/
+  }
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    font-size: var(--normal-font-size);
+    color: var(--white-color);
+  }
+  /*view text shadow*/
+  #header .nav-list ul a:after {
+    display: none;
+  }
+}
