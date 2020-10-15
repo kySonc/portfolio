@@ -17,7 +17,7 @@
   --black-color: black;
   --nav-view-color: rgba(255, 255, 255, 0.3);
   --view-color: rgb(31, 30, 30);
-  --text-view-color: rgba(240, 248, 255, 0.021);
+  --text-view-color: #272727;
 }
 
 /*===== font size =====*/
@@ -62,6 +62,7 @@ ul {
 }
 a {
   text-decoration: none; /* 밑줄 지우기 */
+  color: inherit; /*부모의 컬러상속*/
 }
 /*===== CLASS CSS =====*/
 /*===== header =====*/
@@ -88,7 +89,7 @@ a {
 /*nav layout*/
 #header {
   position: fixed; /*고정된 위치 설정 상위요소에 영향을 받지 않는다*/
-  z-index: var(--z-fixed);
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100vw; /* view port 너비 */
@@ -98,6 +99,7 @@ a {
   min-height: 8vh; /* 요소의 최소높이 */
   background-color: rgba(31, 30, 30, 0.04); /*nav-bar 투명도 */
   transition: 0.3s ease background-color; /*scroll nav-bar*/
+  border-style: none;
 }
 #header .nav-bar {
   display: flex;
@@ -352,6 +354,34 @@ a {
   color: var(--text-animation-color);
   background-color: var(--first-color);
 }
+#header .nav-list .dropdown {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #4a0404;
+  transition: 0.5s ease;
+  left: inherit; /*부모상속 받아 위치 이동 */
+  top: -210px; /* 위로 위치 이동 화면 밖 */
+  z-index: -1; /*menu bar 보다 아래서 이동*/
+  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  border-style: none;
+  padding-top: 10px;
+}
+#header .nav-list .dropdown li{
+  position:relative;
+    
+}
+#header .nav-list .dropdown2 {
+  position: fixed;
+  display: flex;  
+  flex-direction: column;
+  
+  transition: 0.5s ease;      
+  /*visibility: hidden;*/ /*숨김(자신의 영역은 계속 차지) */
+  border-style: none;  
+  color:blue;
+  /*visibility: hidden;*/
+}
 
 /*===== Show menu =====*/
 /*===== Active menu =====*/
@@ -368,55 +398,51 @@ a {
   #header .hamburger {
     display: none;
   }
+  #header .nav-bar {
+    z-index: 0; /*dropdown 걸림방지 */    
+  }
   #header .nav-list ul {
     position: initial; /* 처음 값과 동일 */
-    /*display: flex;*/
+
+    display: flex;
     flex-direction: row;
     height: auto;
     width: fit-content;
     background-color: transparent;
-    color: red;
   }
-  #header .nav-list ul li {
-    position: relative;
-    color: red;
-    /*z-index: 1000;*/
+  #header .nav-list ul .drop:hover .dropdown {
+    visibility: visible; /*박스가 보여짐*/
+    top: 90%; /*위에서 아래로 내려옴 */
+    transition: 0.7s ease;
   }
-  #header .nav-list ul li:hover .dropdown {
-    visibility: visible;
-    top: 100%; /*위에서 아래로 내려옴 */
-    color: red;
+  #header .nav-list ul .drop:hover .dropdown2 {
+    visibility: visible; /*박스가 보여짐*/
+    left:820px; /*위에서 아래로 내려옴 */
+    transition: 0.7s ease;
   }
+  /*#header .nav-list ul li {
+    display: inline-block;
+  }*/
   #header .nav-list ul li a {
     font-size: 1.8rem;
-    display: block;
-    color: red;
+    
+
+    /* display: block;*/
   }
-  #header .nav-list ul li a:hover {
+  /*#header .nav-list ul li:hover {
     color: cyan;
     border-radius: 5px;
-    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+  }*/
+
+  /*#header .nav-list .dropdown li a {
     color: red;
-  }
-  #header .nav-list ul a:after {
-    display: none;
-  }
-  .dropdown li {
-    z-index: 100;
-    display: flex;
-    color: red;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+  }*/
+  /*.drop > a {
+    position: fixed;
     position: relative;
-  }
-  .dropdown li a {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; /* 세로 정렬 */
-    /*visibility: hidden;*/ /*dropdown 영역 숨김*/
-    transition: 0.3s;
-    left: 0;
-    top: 100; /* 위로 위치 이동 화면 밖 */
-    z-index: 1; /*menu bar 보다 아래서 이동*/
-    color: red;
+    display: inline-block;*/
   }
 }
