@@ -53,6 +53,7 @@
 }
 html {
   font-size: 10px;
+  /*font-family: "Poppins", sans-serif;*/
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
@@ -126,7 +127,7 @@ a {
 }
 /*hamburger view active */
 #header .nav-list ul.active {
-  left: 20%; /* hamburger view 보임 */
+  left: 0; /* hamburger view 보임 */
 }
 
 #header .nav-list ul a {
@@ -138,7 +139,7 @@ a {
   padding: 20px;
 }
 /* view text shadow */
-#header .nav-list ul a::after {
+/*#header .nav-list ul a::after {
   content: attr(data-after);
   position: absolute;
   top: 50%;
@@ -149,15 +150,15 @@ a {
   letter-spacing: 50px;
   z-index: -1;
   transition: 0.3s ease letter-spacing;
-}
+}*/
 /* view li:hover*/
 #header .nav-list ul li:hover a::after {
   transform: translate(-50%, -50%) scale(1);
   letter-spacing: initial; /*기본값*/
 }
-#header .nav-list ul li:hover a {
+/*#header .nav-list ul li:hover a {
   color: var(--text-animation-color);
-}
+}*/
 /*hamburger button*/
 #header .hamburger {
   height: 60px;
@@ -363,25 +364,59 @@ a {
 /*===== MEDIA QUERISE =====*/
 @media only screen and (min-width: 1194px) {
   /*header*/
+
   #header .hamburger {
     display: none;
   }
   #header .nav-list ul {
-    position: initial;
-    display: block;
+    position: initial; /* 처음 값과 동일 */
+    /*display: flex;*/
+    flex-direction: row;
     height: auto;
     width: fit-content;
-    background-color: transparent; /*기본 속성으로 만든다*/
+    background-color: transparent;
+    color: red;
   }
   #header .nav-list ul li {
-    display: inline-block;
+    position: relative;
+    color: red;
+    /*z-index: 1000;*/
+  }
+  #header .nav-list ul li:hover .dropdown {
+    visibility: visible;
+    top: 100%; /*위에서 아래로 내려옴 */
+    color: red;
   }
   #header .nav-list ul li a {
-    font-size: var(--normal-font-size);
-    color: var(--white-color);
+    font-size: 1.8rem;
+    display: block;
+    color: red;
   }
-  /*view text shadow*/
+  #header .nav-list ul li a:hover {
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+    color: red;
+  }
   #header .nav-list ul a:after {
     display: none;
+  }
+  .dropdown li {
+    z-index: 100;
+    display: flex;
+    color: red;
+    position: relative;
+  }
+  .dropdown li a {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* 세로 정렬 */
+    /*visibility: hidden;*/ /*dropdown 영역 숨김*/
+    transition: 0.3s;
+    left: 0;
+    top: 100; /* 위로 위치 이동 화면 밖 */
+    z-index: 1; /*menu bar 보다 아래서 이동*/
+    color: red;
   }
 }
