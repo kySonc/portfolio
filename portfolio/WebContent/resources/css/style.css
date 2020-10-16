@@ -89,7 +89,7 @@ a {
 /*nav layout*/
 #header {
   position: fixed; /*고정된 위치 설정 상위요소에 영향을 받지 않는다*/
-  z-index: 10;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100vw; /* view port 너비 */
@@ -117,11 +117,11 @@ a {
   width: 100vw;
   height: 100vh;
   left: 100%; /* hamburger view 숨김 */
-  /*left: 0;*/
+  /*left: 0;*/ /* hamburger view 숨김 */
   top: 0;
   display: flex; /* flex 로 바꾸고 옆으로 나열*/
   justify-content: center; /* a 태그 중앙배치 */
-  align-items: center;
+  /*align-items: center;*/
   flex-direction: column; /* a 태그 세로정열 */
   z-index: 1;
   overflow: hidden;
@@ -153,11 +153,22 @@ a {
   z-index: -1;
   transition: 0.3s ease letter-spacing;
 }*/
-/* view li:hover*/
-#header .nav-list ul li:hover a::after {
-  transform: translate(-50%, -50%) scale(1);
-  letter-spacing: initial; /*기본값*/
+#header .nav-list ul a::after {
+  content: attr(data-after); /* dataset객체(attr)를 통해 저장된 속성 가져오기 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 13rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
 }
+/* view li:hover*/
+/*#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}*/
 /*#header .nav-list ul li:hover a {
   color: var(--text-animation-color);
 }*/
@@ -349,58 +360,69 @@ a {
   transition: 0.3s ease; /*애니메이션 적용 f-s-f*/
   transition-property: background-color, color; /*트랜지션 적용 속성*/
 }
+
 /*button hover 변화*/
+
 #hero .cta:hover {
   color: var(--text-animation-color);
   background-color: var(--first-color);
 }
+
+/*dorpdown nav*/
+
 #header .nav-list .dropdown {
   display: flex;
   position: absolute;
   flex-direction: column;
   background-color: #4a0404;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
   left: inherit; /*부모상속 받아 위치 이동 */
-  top: -210px; /* 위로 위치 이동 화면 밖 */
+  top: -250px; /* 위로 위치 이동 화면 밖 */
   z-index: -1; /*menu bar 보다 아래서 이동*/
   visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
   border-style: none;
   padding-top: 10px;
+  width: auto;
 }
-
-/*#header .nav-list .dropdown {
-  position: relative;
-  position: fixed;
-}*/
-/*#header .nav-list .dropdown .drop2 {
-  position: relative;
-  position: fixed;
-}*/
-#header .nav-list .dropdown2 li a {
-  position: fixed;
+#header .nav-list ul .drop:hover .dropdown {
+  visibility: visible; /*박스가 보여짐*/
+  top: 90%; /*위에서 아래로 내려옴 */
+  transition: 0.7s ease;
 }
-#header .nav-list .dropdown2 li {
-  margin: 10px;
-  padding: 10px;
+#header .nav-list .dropdown .drop2 {
+  /*background-color: red;*/
   position: relative;
-  left: 100px;
-  display: flex;
-  flex-direction: column;
 }
 #header .nav-list .dropdown2 {
-  position: absolute;
-  background-color: blue;
+  position: fixed;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  transition: 0.5s ease;
-  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
   border-style: none;
-  background-color: var(--first-color);
-  left: 1000px; /*부모상속 받아 위치 이동 */
-  top: 120px;
+  transition: 0.7s ease;
+  top: -150px;
+  width: auto;
+  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+}
+#header .nav-list ul span:hover {
+  color: blue;
+}
+#header .nav-list ul a:hover {
+  color: var(--first-color);
 }
 
+#header .nav-list ul .drop2:hover .dropdown2 {
+  position: static;
+  visibility: visible; /*박스가 보여짐*/
+  transition: 0.7s ease;
+  margin: 5px;
+  padding: 20px;
+  border: 2px solid blue;
+}
+#header .nav-list ul li a {
+  font-size: 1.8rem;
+  color: var(--white-color);
+}
 /*===== Show menu =====*/
 /*===== Active menu =====*/
 /*===== HOME =====*/
@@ -424,43 +446,24 @@ a {
     display: flex;
     flex-direction: row;
     height: auto;
-    width: fit-content;
     background-color: transparent;
+    width: fit-content;
+    visibility: visible;
   }
-  #header .nav-list ul .drop:hover .dropdown {
-    visibility: visible; /*박스가 보여짐*/
-    top: 90%; /*위에서 아래로 내려옴 */
-    transition: 0.7s ease;
+}
+
+@media only screen and (max-width: 1194px) {
+  #header .nav-list .dropdown,
+  #header .nav-list .dropdown2 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    transition: none;
+    visibility: visible;
+    display: none;
+    z-index: 1000;
   }
-  #header .nav-list ul .drop2:hover .dropdown2 li {
-    /*position: fixed;*/
-    visibility: visible; /*박스가 보여짐*/
-    /*right: inherit;*/
-
-    left: inherit;
-
-    transition: 0.7s ease;
-    margin: 50px;
-    padding: 50px;
+  .active {
+    display: block;
   }
-
-  /*#header .nav-list ul li {
-    display: inline-block;
-  }*/
-  #header .nav-list ul li a {
-    font-size: 1.8rem;
-    /* display: block;*/
-  }
-
-  /*#header .nav-list ul li:hover {
-    color: cyan;
-    border-radius: 5px;
-  }*/
-
-  /*#header .nav-list .dropdown li a {
-    color: red;
-    font-size: 1.8rem;
-    margin: 0;
-    padding: 0;
-  }*/
 }

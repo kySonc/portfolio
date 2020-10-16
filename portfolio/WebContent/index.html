@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
   <body>
     <!-- ===== HEADER ===== -->
@@ -25,7 +26,7 @@
             <ul>
               <li><a href="#hero" data-after="Home">타이어</a></li>
               <li class="drop">
-                <a href="#services" data-after="Service">서비스 <span class="fa fa-plus"></span></a>
+                <a href="#services" data-after="Service" class="dropbtn">서비스 <span class="fa fa-plus"></span></a>
                 <ul class="dropdown">
                   <li class="drop2"><a href="#" >나의 차량관리 <span class="fa fa-plus"></span></a>
                     <ul class="dropdown2">
@@ -38,8 +39,15 @@
                 </ul>              
               </li>
               <li><a href="#projects" data-after="Project">이벤트</a></li>
-              <li><a href="#about" data-after="About">고객센터 <span class="fa fa-plus"></span></a></li>
-              <li><a href="#contact" data-after="Contact">회원가입/로그인</a></li>
+              <li class="drop">
+                <a href="#about" data-after="About">고객센터 <span class="fa fa-plus"></span></a>
+                <ul class="dropdown">
+                  <li><a href="#">공지 사항</a></li>
+                  <li><a href="#">1:1 고객상담</a></li>
+                  <li><a href="#">관리자</a></li>                  
+                </ul>              
+              </li>              
+              <li><a href="#contact" data-after="Contact"><span>회원가입</span>/<span>로그인</span></a></li>
             </ul>
           </div>
         </div>
@@ -64,5 +72,17 @@
     <!-- ===== SCROLL REVEAL ===== -->
     <!-- ===== MAIN JS ===== -->
     <script src="resources/JS/main.js"></script>
+    <script>
+      $(".dropbtn").click(function () {
+        $(".dropdown").toggleClass("display");
+        $(".dropdown2").removeClass("display");
+      });
+      $(".dropbtn2").click(function () {
+        $(".dropdown2").toggleClass("display");
+      });
+      $(".fa-bars").click(function () {
+        $(".menu-content").toggle();
+      });
+    </script>    
   </body>
 </html>
