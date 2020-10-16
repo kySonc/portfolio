@@ -367,20 +367,38 @@ a {
   border-style: none;
   padding-top: 10px;
 }
-#header .nav-list .dropdown li{
-  position:relative;
-    
+
+/*#header .nav-list .dropdown {
+  position: relative;
+  position: fixed;
+}*/
+/*#header .nav-list .dropdown .drop2 {
+  position: relative;
+  position: fixed;
+}*/
+#header .nav-list .dropdown2 li a {
+  position: fixed;
+}
+#header .nav-list .dropdown2 li {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
 }
 #header .nav-list .dropdown2 {
-  position: fixed;
-  display: flex;  
+  position: absolute;
+  background-color: blue;
+  display: flex;
   flex-direction: column;
-  
-  transition: 0.5s ease;      
-  /*visibility: hidden;*/ /*숨김(자신의 영역은 계속 차지) */
-  border-style: none;  
-  color:blue;
-  /*visibility: hidden;*/
+  flex-wrap: wrap;
+  transition: 0.5s ease;
+  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  border-style: none;
+  background-color: var(--first-color);
+  left: 1000px; /*부모상속 받아 위치 이동 */
+  top: 120px;
 }
 
 /*===== Show menu =====*/
@@ -391,19 +409,18 @@ a {
 /*===== PORTFOLIO =====*/
 /*===== CONTACT =====*/
 /*===== FOOTER =====*/
+
 /*===== MEDIA QUERISE =====*/
 @media only screen and (min-width: 1194px) {
   /*header*/
-
   #header .hamburger {
     display: none;
   }
   #header .nav-bar {
-    z-index: 0; /*dropdown 걸림방지 */    
+    z-index: 0; /*dropdown 걸림방지 */
   }
   #header .nav-list ul {
     position: initial; /* 처음 값과 동일 */
-
     display: flex;
     flex-direction: row;
     height: auto;
@@ -415,20 +432,26 @@ a {
     top: 90%; /*위에서 아래로 내려옴 */
     transition: 0.7s ease;
   }
-  #header .nav-list ul .drop:hover .dropdown2 {
+  #header .nav-list ul .drop2:hover .dropdown2 li {
+    /*position: fixed;*/
     visibility: visible; /*박스가 보여짐*/
-    left:820px; /*위에서 아래로 내려옴 */
+    /*right: inherit;*/
+
+    left: inherit;
+
     transition: 0.7s ease;
+    margin: 50px;
+    padding: 50px;
   }
+
   /*#header .nav-list ul li {
     display: inline-block;
   }*/
   #header .nav-list ul li a {
     font-size: 1.8rem;
-    
-
     /* display: block;*/
   }
+
   /*#header .nav-list ul li:hover {
     color: cyan;
     border-radius: 5px;
@@ -440,9 +463,4 @@ a {
     margin: 0;
     padding: 0;
   }*/
-  /*.drop > a {
-    position: fixed;
-    position: relative;
-    display: inline-block;*/
-  }
 }
