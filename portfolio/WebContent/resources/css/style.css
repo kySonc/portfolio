@@ -29,7 +29,7 @@
   --h2-font-size: 1.5rem;
   --normal-font-size: 1.8rem;
   --small-font-size: 1.4rem;
-  --view-font-size: 12rem;
+  --view-font-size: 8rem;
 }
 
 /*===== Marginse =====*/
@@ -121,7 +121,7 @@ a {
   top: 0;
   display: flex; /* flex 로 바꾸고 옆으로 나열*/
   justify-content: center; /* a 태그 중앙배치 */
-  /*align-items: center;*/
+  align-items: center;
   flex-direction: column; /* a 태그 세로정열 */
   z-index: 1;
   overflow: hidden;
@@ -139,10 +139,12 @@ a {
   display: block;
   color: var(--white-color);
   padding: 20px;
+  display: block;
+  /*background-color: blue;*/
 }
 /* view text shadow */
-/*#header .nav-list ul a::after {
-  content: attr(data-after);
+#header .nav-list ul a::after {
+  content: attr(data-after); /* dataset객체(attr)를 통해 저장된 속성 가져오기 */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -152,26 +154,13 @@ a {
   letter-spacing: 50px;
   z-index: -1;
   transition: 0.3s ease letter-spacing;
-}*/
-#header .nav-list ul a::after {
-  content: attr(data-after); /* dataset객체(attr)를 통해 저장된 속성 가져오기 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  font-size: 13rem;
-  letter-spacing: 50px;
-  z-index: -1;
-  transition: 0.3s ease letter-spacing;
 }
+
 /* view li:hover*/
-/*#header .nav-list ul li:hover a::after {
+#header .nav-list ul li:hover a::after {
   transform: translate(-50%, -50%) scale(1);
   letter-spacing: initial;
-}*/
-/*#header .nav-list ul li:hover a {
-  color: var(--text-animation-color);
-}*/
+}
 /*hamburger button*/
 #header .hamburger {
   height: 60px;
@@ -248,7 +237,7 @@ a {
 /* img */
 #hero {
   background-image: url(../images/j1.jpg);
-  /*background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   background-size: cover; /*가로 세로 비율 유지 */
   background-position: top center; /*위치 조정  상단 가운데*/
   position: relative; /*위치 조정 */
@@ -271,7 +260,7 @@ a {
   max-width: 1194px;
   margin: 0 auto;
   padding: 0 50px;
-  justify-content: flex-start; /*기본설정, 플렉스 컨테이너의 앞쪽에서부터 배치*/
+  justify-content: space-between; /*기본설정, 플렉스 컨테이너의 앞쪽에서부터 배치*/
 }
 /*Welcome text*/
 #hero h1 {
@@ -285,6 +274,16 @@ a {
   color: transparent; /* animation 적용 글자색상을 없앤다 */
   animation: text_reveal 0.5s ease forwards; /*kewframe에 의해 설정된 계산 된 값을 유지*/
   animation-delay: 1s;
+}
+#hero h2 {
+  display: block;
+  /*width: max-content;*/
+  width: fit-content; /*text 반응형을 위한 처리 */
+  position: relative;
+  font-weight: 500;
+  font-size: 3.7rem;
+  margin-left: 4px;
+  color: var(--text-color);
 }
 /*text delay */
 #hero h1:nth-child(1) {
@@ -342,7 +341,7 @@ a {
 /* web title color*/
 @keyframes text_reveal_name {
   100% {
-    color: var(--first-color);
+    color: crimson;
     font-weight: 700;
   }
 }
@@ -360,12 +359,31 @@ a {
   transition: 0.3s ease; /*애니메이션 적용 f-s-f*/
   transition-property: background-color, color; /*트랜지션 적용 속성*/
 }
+#hero .bta {
+  display: inline-block;
+  color: crimson;
+  width: 200px;
+  border-radius: 5px;
+  background-color: transparent; /* 배경색이 없다 */
+  border: 2px solid crimson;
+  padding: 10px 30px; /* 버튼 크기 조절 */
+  font-size: var(--butt-font-size);
+  text-align: center;
+  letter-spacing: 0.1rem; /*글자 사이의 간격 */
+  margin-top: 10px; /* 버튼 상단 여백 */
+  transition: 0.3s ease; /*애니메이션 적용 f-s-f*/
+  transition-property: background-color, color; /*트랜지션 적용 속성*/
+}
 
 /*button hover 변화*/
 
 #hero .cta:hover {
   color: var(--text-animation-color);
   background-color: var(--first-color);
+}
+#hero .bta:hover {
+  color: var(--first-color);
+  background-color: crimson;
 }
 
 /*dorpdown nav*/
@@ -379,19 +397,20 @@ a {
   left: inherit; /*부모상속 받아 위치 이동 */
   top: -250px; /* 위로 위치 이동 화면 밖 */
   z-index: -1; /*menu bar 보다 아래서 이동*/
-  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  /*visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
   border-style: none;
   padding-top: 10px;
   width: auto;
 }
 #header .nav-list ul .drop:hover .dropdown {
   visibility: visible; /*박스가 보여짐*/
-  top: 90%; /*위에서 아래로 내려옴 */
-  transition: 0.7s ease;
+  top: 80%; /*위에서 아래로 내려옴 */
+  transition: 1s ease;
 }
 #header .nav-list .dropdown .drop2 {
-  /*background-color: red;*/
   position: relative;
+  /*background-color: red;*/
+  box-sizing: border-box;
 }
 #header .nav-list .dropdown2 {
   position: fixed;
@@ -402,6 +421,8 @@ a {
   transition: 0.7s ease;
   top: -150px;
   width: auto;
+  box-sizing: border-box;
+  z-index: -1;
   visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
 }
 #header .nav-list ul span:hover {
@@ -415,9 +436,10 @@ a {
   position: static;
   visibility: visible; /*박스가 보여짐*/
   transition: 0.7s ease;
-  margin: 5px;
+  margin: 10px;
   padding: 20px;
   border: 2px solid blue;
+  box-sizing: border-box;
 }
 #header .nav-list ul li a {
   font-size: 1.8rem;
@@ -450,8 +472,22 @@ a {
     width: fit-content;
     visibility: visible;
   }
+  #header .nav-list ul a:after {
+    display: none;
+  }
 }
 
+@media only screen and (max-width: 550px) {
+  #hero .hero {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: center;
+  }
+  #hero h2 {
+    margin-top: 90px;
+  }
+}
 @media only screen and (max-width: 1194px) {
   #header .nav-list .dropdown,
   #header .nav-list .dropdown2 {
@@ -459,11 +495,7 @@ a {
     left: 0px;
     top: 0px;
     transition: none;
-    visibility: visible;
     display: none;
     z-index: 1000;
-  }
-  .active {
-    display: block;
   }
 }
