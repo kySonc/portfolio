@@ -397,7 +397,7 @@ a {
   left: inherit; /*부모상속 받아 위치 이동 */
   top: -250px; /* 위로 위치 이동 화면 밖 */
   z-index: -1; /*menu bar 보다 아래서 이동*/
-  /*visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
   border-style: none;
   padding-top: 10px;
   width: auto;
