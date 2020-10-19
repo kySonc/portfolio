@@ -124,7 +124,7 @@ a {
   align-items: center;
   flex-direction: column; /* a 태그 세로정열 */
   z-index: 1;
-  overflow: hidden;
+  /*overflow: hidden;*/
   transition: 0.7s ease left;
 }
 /*hamburger view active */
@@ -387,7 +387,11 @@ a {
 }
 
 /*dorpdown nav*/
-
+#header .nav-list .dropdown .drop {
+  position: relative;
+  /*background-color: red;*/
+  box-sizing: border-box;
+}
 #header .nav-list .dropdown {
   display: flex;
   position: absolute;
@@ -413,37 +417,40 @@ a {
   box-sizing: border-box;
 }
 #header .nav-list .dropdown2 {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  border-style: none;
   transition: 0.7s ease;
-  top: -150px;
-  width: auto;
-  box-sizing: border-box;
-  z-index: -1;
+  top: -400px;
+  left: 400px;
   visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
-}
-#header .nav-list ul span:hover {
-  color: blue;
-}
-#header .nav-list ul a:hover {
-  color: var(--first-color);
 }
 
 #header .nav-list ul .drop2:hover .dropdown2 {
-  position: static;
+  position: absolute;
   visibility: visible; /*박스가 보여짐*/
   transition: 0.7s ease;
-  margin: 10px;
-  padding: 20px;
+  margin: 0px;
+  padding: 0px;
   border: 2px solid blue;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  top: 0;
+  left: 190px;
+  width: 150px;
+  border-left: 2px solid var(--first-color);
 }
 #header .nav-list ul li a {
   font-size: 1.8rem;
   color: var(--white-color);
+}
+#header .nav-list ul a:hover {
+  color: var(--first-color);
+}
+#header .nav-list ul span:hover {
+  color: blue;
 }
 /*===== Show menu =====*/
 /*===== Active menu =====*/
@@ -491,11 +498,6 @@ a {
 @media only screen and (max-width: 1194px) {
   #header .nav-list .dropdown,
   #header .nav-list .dropdown2 {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    transition: none;
     display: none;
-    z-index: 1000;
   }
 }
