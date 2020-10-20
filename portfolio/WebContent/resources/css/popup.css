@@ -44,8 +44,7 @@ input[type="checkbox"] {
 .popup {
   display: none;
   background: #fff;
-  /*width: 410px;*/
-  width: auto;
+  width: 350px;
   padding: 30px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
@@ -66,7 +65,7 @@ input[type="checkbox"] {
   display: block;
   width: auto;
   margin-top: 10px;
-  font-size: 1.3vw;
+  font-size: 1.9rem;
   font-weight: 600;
   text-align: center;
 }
