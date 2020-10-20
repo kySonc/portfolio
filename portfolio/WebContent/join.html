@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DreamTire</title>
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <link rel="stylesheet" href="./resources/css/popup.css">
+    <link rel="stylesheet" href="./resources/css/header.css">    
+    <link rel="stylesheet" href="./resources/css/join.css">    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -48,52 +48,13 @@
                   <li><a href="#">관리자</a></li>                  
                 </ul>              
               </li>              
-              <li><a href="join.html" data-after="signup login"><span>회원가입</span>/<span>로그인</span></a></li>
+              <li><a href="#join" data-after="signup login"><span>회원가입</span>/<span>로그인</span></a></li>
             </ul>
           </div>
         </div>
       </div>
-    </section>
-    <!-- ===== Hero Section ===== -->
-    <section id="hero">
-      <div class="hero container">
-        <div>
-          <h1>Welcome<span></span></h1>
-          <h1>to<span></span></h1>
-          <h1>Dream Tire<span></span></h1>
-          <a href="#Portfolio" type="button" class="cta">Portfolio</a>
-        </div>
-        <div class="center">
-          <h2>타이어 찾기<span></span></h2>         
-          <input type="checkbox" id="show">
-          <label for="show" class="show-btn">Tier 검색</label>
-          <div class="popup">
-            <label for="show" class="close-btn fa fa-times"></label>
-            <div class="text">타이어 사이즈로 찾기</div>
-            <form action="#">
-                <div class="data">
-                    <label>단면폭</label>
-                    <input type="text" required>
-                </div>
-                <div class="data">
-                    <label>편평비</label>
-                    <input type="text" required>
-                </div>
-                <div class="data">
-                    <label>인치</label>
-                    <input type="text" required>
-                </div>                
-                <div class="btn">
-                    <div class="inner"></div>
-                    <button type="submit">확 인</button>
-                </div>
-                <div class="tire-size"><a href="#">나의 타이어 사이즈 확인방법</a></div>
-            </form>
-          </div>
-        </div>       
-
-      </div>      
-    </section>
+    </section>       
+    
     <!-- ===== ABOUT ===== -->
     <!-- ===== SKILLS ===== -->
     <!-- ===== PORTFOLIO ===== -->
@@ -101,19 +62,60 @@
     <!-- ===== FOOTER =====-->
     
     <!-- ===== SCROLL REVEAL ===== -->
+    <section id="hero">
+      <div class="join">        
+        <div class="wrapper">        
+          <div class="title-text">
+            <div class="title login">Login Form</div>
+            <div class="title signup">Signup Form</div>
+          </div>
+          <div class="form-container">
+            <div class="slide-controls">
+              <input type="radio" name="slider" id="login" checked />
+              <input type="radio" name="slider" id="signup" />
+              <label for="login" class="slide login">Login</label>
+              <label for="signup" class="slide signup">Signup</label>
+              <div class="slide-tab"></div>
+            </div>
+            <div class="form-inner">
+              <form action="#" class="login">
+                <div class="field">
+                  <input type="text" placeholder="Email Address" required />
+                </div>
+                <div class="field">
+                  <input type="password" placeholder="password" required />
+                </div>
+                <div class="pass-link"><a href="#">Forgot password?</a></div>
+                <div class="field">
+                  <input type="submit" value="Login" />
+                </div>
+                <div class="signup-link">
+                  Not a member? <a href="#">Signup now</a>
+                </div>
+              </form>
+              <form action="#" class="signup">
+                <div class="field">
+                  <input type="text" placeholder="Email Address" required />
+                </div>
+                <div class="field">
+                  <input type="password" placeholder="password" required />
+                </div>
+                <div class="field">
+                  <input type="password" placeholder="Confirm password" required />
+                </div>
+                <div class="field">
+                  <input type="submit" value="Signup" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
     <!-- ===== MAIN JS ===== -->
+    <script src="resources/JS/join.js"></script>
     <script src="resources/JS/main.js"></script>
-    <script>
-      $(".dropbtn").click(function () {
-        $(".dropdown").toggleClass("display");
-        $(".dropdown2").removeClass("display");
-      });
-      $(".dropbtn2").click(function () {
-        $(".dropdown2").toggleClass("display");
-      });
-      $(".fa-bars").click(function () {
-        $(".menu-content").toggle();
-      });
-    </script>    
+    
   </body>
 </html>
