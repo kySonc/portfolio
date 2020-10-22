@@ -1,7 +1,7 @@
 .contact_list {
   position: relative;
   min-height: auto;
-  padding: 10px 10px;
+  padding: 50px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
   text-align: center;
 }
 .contact_list .content h2 {
-  margin-top: 30px;
+  margin: 100px 0 30px;
   font-size: 36px;
   font-weight: 500;
   border: 1px solid #00bcd4;
@@ -23,30 +23,40 @@
 .contact_list .content p {
   font-weight: 300;
   color: black;
+  margin-bottom: 30px;
 }
 .container .contactInfo_list {
+  display: flex;
+  margin: 10px 0 700px 0;
+  font-size: 16px;
+  color: black;
+  flex-direction: column;
+  font-weight: 300;
   width: 10%;
-  border: 1px solid aqua;
-  margin-bottom: 300px;
+  border: 1px solid red;
 }
 .container .contactInfo_list .box {
   position: relative;
-  padding: 20px 0;
+  padding-top: 30px;
   display: flex;
+  border-bottom: 2px solid aqua;
+  width: 120px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 .contactlist {
-  width: 70%;
+  width: 80%;
   padding: 0px;
   background: green;
   display: flex;
   flex-direction: column;
   align-content: center;
   min-height: 100vh;
+  margin-top: 100px;
 }
 .board_list_wrap {
   padding: 10px;
