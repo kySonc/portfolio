@@ -14,7 +14,7 @@
   text-align: center;
 }
 .contact_list .content h2 {
-  margin: 100px 0 30px;
+  margin: 100px 0px 20px;
   font-size: 36px;
   font-weight: 500;
   border: 1px solid #00bcd4;
@@ -27,7 +27,7 @@
 }
 .container .contactInfo_list {
   display: flex;
-  margin: 10px 0 700px 0;
+  margin: 10px 10px 700px 0;
   font-size: 16px;
   color: black;
   flex-direction: column;
@@ -50,7 +50,7 @@ a {
 
 .contactlist {
   width: 80%;
-  padding: 0px;
+  padding: 10px;
   background: green;
   display: flex;
   flex-direction: column;
