@@ -1,0 +1,132 @@
+.contact_list {
+  position: relative;
+  min-height: auto;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eaeaea;
+  background-size: cover;
+}
+.contact_list .content {
+  max-width: 800px;
+  text-align: center;
+}
+.contact_list .content h2 {
+  margin-top: 30px;
+  font-size: 36px;
+  font-weight: 500;
+  border: 1px solid #00bcd4;
+  color: aqua;
+}
+.contact_list .content p {
+  font-weight: 300;
+  color: black;
+}
+.container .contactInfo_list {
+  width: 10%;
+  border: 1px solid aqua;
+  margin-bottom: 300px;
+}
+.container .contactInfo_list .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.contactlist {
+  width: 70%;
+  padding: 0px;
+  background: green;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  min-height: 100vh;
+}
+.board_list_wrap {
+  padding: 10px;
+}
+.board_list_head {
+  border-top: 2px solid green;
+}
+.board_list_head,
+.board_list_body .item {
+  font-size: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+.board_list_head > div,
+.board_list_body .item > div {
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid chocolate;
+}
+.board_list_head > div {
+  font-weight: 600;
+}
+.board_list .num {
+  width: 5%;
+}
+.board_list .tit {
+  width: 55%;
+}
+.board_list_body div.tit {
+  text-align: left;
+}
+.board_list_body div.tit a:hover {
+  text-decoration: underline;
+}
+.board_list .writer {
+  width: 15%;
+}
+.board_list .date {
+  width: 20%;
+}
+.board_list .view {
+  width: 5%;
+}
+
+/* paging */
+.paging {
+  margin-top: 30px;
+  text-align: center;
+}
+.paging a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.paging a.first,
+.paging a.prev,
+.paging a.next,
+.paging a.last {
+  width: 30px;
+  height: 30px;
+  background: #999;
+  background-image: url(/images/j1.jpg.jpg);
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  text-indent: -1000px;
+  overflow: hidden;
+}
+.paging a.num {
+  margin: 0 10px;
+}
+.paging a.first {
+  background-position: -320px -198px;
+}
+.paging a.prev {
+  background-position: -304px -46px;
+}
+.paging a.next {
+  background-position: -301px -192px;
+}
+.paging a.last {
+  background-position: 10px -40px;
+}
