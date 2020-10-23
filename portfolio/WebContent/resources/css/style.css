@@ -500,4 +500,14 @@ a {
   #header .nav-list .dropdown2 {
     display: none;
   }
+  .container .contactInfo_list {
+    display: flex;
+    margin: 10px 10px 10px 0;
+    font-size: 16px;
+    color: black;
+    flex-direction: column;
+    font-weight: 300;
+    width: 10%;
+    border: 1px solid red;
+  }
 }
