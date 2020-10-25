@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: #03080a;
   background-size: cover;
+  margin: 0 auto;
 }
 .contact .content {
   max-width: 800px;
@@ -35,6 +36,7 @@
   padding: 20px 0;
   display: flex;
   border-bottom: 2px solid red;
+  align-items: center;
 }
 .container .contactInfo .box .icon {
   min-width: 60px;
@@ -72,7 +74,15 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  border: 1px solid red;
+}
+.container .row101 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   border: 1px solid red;
 }
 .container .row100 .col {
@@ -162,6 +172,7 @@ input[type="submit"] {
   color: #000;
   font-size: 18px;
   border-radius: 2px;
+  margin: 10px 5px;
 }
 
 @media (max-width: 991px) {
