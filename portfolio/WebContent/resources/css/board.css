@@ -1,9 +1,9 @@
 .contact_list {
   position: relative;
-  min-height: auto;
+  min-height: 100vh;
   padding: 50px 10px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   background-color: #eaeaea;
