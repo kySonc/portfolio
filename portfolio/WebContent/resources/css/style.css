@@ -482,6 +482,22 @@ a {
   #header .nav-list ul a:after {
     display: none;
   }
+  #services .service-bottom .service-item1 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item2 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item3 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item4 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
 }
 
 @media only screen and (max-width: 550px) {
