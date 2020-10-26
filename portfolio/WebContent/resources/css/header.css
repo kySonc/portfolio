@@ -360,17 +360,6 @@ a {
   }
 }
 
-@media only screen and (max-width: 550px) {
-  #hero .hero {
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 50px;
-    justify-content: center;
-  }
-  #hero h2 {
-    margin-top: 90px;
-  }
-}
 @media only screen and (max-width: 1194px) {
   #header .nav-list .dropdown,
   #header .nav-list .dropdown2 {
