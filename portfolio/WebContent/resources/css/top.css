@@ -3,7 +3,7 @@
   height: 30px;
   line-height: 30px;
   display: inline-block;
-  background: #e55039;
+  background: gold;
   font-size: 20px;
   text-align: center;
   color: #fff;
@@ -17,5 +17,5 @@
   display: none;
 }
 #Back2Top:hover {
-  background-color: #f6b93b;
+  background-color: var(--main-color);
 }

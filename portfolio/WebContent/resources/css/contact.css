@@ -1,73 +1,70 @@
-.contact {
-  position: relative;
-  min-height: 100vh;
-  padding: 50px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #03080a;
-  background-size: cover;
+#contact .contact {
+  flex-direction: column; /* 배치 방향 column */
   margin: 0 auto;
+  padding: 100px 0;
+  background-color: #03080a;
 }
-.contact .content {
+
+#contact .content {
   max-width: 800px;
   text-align: center;
 }
-.contact .content h2 {
-  margin: 80px 0 30px;
-  font-size: 36px;
+#contact .content h2 {
+  font-size: 5rem;
+  color: var(--main-color);
+}
+#contact .content p {
   font-weight: 500;
-  border: 1px solid #00bcd4;
-  color: aqua;
+  color: var(--main-color);
+  margin: 10px;
 }
-.contact .content p {
-  font-weight: 300;
-  color: #fff;
-  margin-bottom: 30px;
+article {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin-top: 50px;
+  /*border: 2px solid red;*/
 }
-.container .contactInfo {
+#contact .contactInfo {
   width: 30%;
-  border: 1px solid aqua;
-  margin-bottom: 300px;
+  /*border: 1px solid var(--main-color);*/
 }
-.container .contactInfo .box {
+#contact .contactInfo .box {
   position: relative;
   padding: 20px 0;
   display: flex;
-  border-bottom: 2px solid red;
-  align-items: center;
+  /*border-bottom: 2px solid red;*/
 }
-.container .contactInfo .box .icon {
+#contact .contactInfo .box .icon {
   min-width: 60px;
   height: 60px;
-  background: #fff;
+  background: var(--main-color);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   font-size: 22px;
+  color: var(--main-animation-color);
 }
-.container .contactInfo .box .text {
+#contact .contactInfo .box .text {
   display: flex;
   margin: 10px;
   font-size: 16px;
-  color: #fff;
+  color: var(--white-color);
   flex-direction: column;
   font-weight: 300;
 }
-.container .contactInfo .box .text h3 {
+#contact .contactInfo .box .text h3 {
   font-weight: 500;
   color: #00bcd4;
 }
-.contactForm {
-  width: 60%;
-  padding: 0px;
-  /*background: green;*/
+
+#contact .contactForm {
+  width: 70%;
+  /*  background: green;*/
   display: flex;
   flex-direction: column;
   align-content: center;
-  min-height: 100vh;
 }
 .container .row100 {
   position: relative;
@@ -75,7 +72,7 @@
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 .container .row101 {
   position: relative;
@@ -83,7 +80,7 @@
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 .container .row100 .col {
   position: relative;
@@ -179,14 +176,14 @@ input[type="submit"] {
   .contact {
     padding: 50px;
   }
-  .container {
+  article {
     flex-direction: column;
   }
   .container .contactInfo {
     margin-bottom: 40px;
   }
-  .container .contactInfo,
-  .contactForm {
+  #contact .contactInfo,
+  #contact .contactForm {
     width: 100%;
   }
 }
