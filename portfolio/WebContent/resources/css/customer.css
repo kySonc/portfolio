@@ -24,12 +24,15 @@
 article {
   display: flex;
   width: 90%;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
   /*border: 2px solid red;*/
 }
 #customer .customerInfo {
   width: 20%;
+  padding: 10px;
+  margin-bottom: 100px;
   /*border: 1px solid var(--main-color);*/
 }
 #customer .customerInfo .box {
@@ -86,6 +89,8 @@ article {
   border-bottom: 1px solid red;
 }
 
+/* paging */
+
 /*===== Media Query =====*/
 
 /*table*/
@@ -101,6 +106,7 @@ article {
     display: block;
     background-color: rgba(92, 95, 236, 0.1);
     border-radius: 4px;
+    border: 1px solid white;
   }
   #customer .customerlist td:first-child {
     padding-top: 0.9em;

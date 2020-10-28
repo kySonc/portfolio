@@ -22,7 +22,7 @@ article {
   display: flex;
   width: 90%;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
   /*border: 2px solid red;*/
 }
 #contact .contactInfo {
