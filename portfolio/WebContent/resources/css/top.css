@@ -6,7 +6,7 @@
   background: gold;
   font-size: 20px;
   text-align: center;
-  color: #fff;
+  color: var(--drop-color);
   font-weight: bold;
   border-radius: 50%;
   position: fixed;

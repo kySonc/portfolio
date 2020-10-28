@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./resources/css/top.css">
     <link rel="stylesheet" href="./resources/css/main.css">    
     <link rel="stylesheet" href="./resources/css/popup.css">
+    <link rel="stylesheet" href="./resources/css/services.css">
     <link rel="stylesheet" href="./resources/css/contact.css">
+    <link rel="stylesheet" href="./resources/css/customer.css">
   </head>
   <body>
     <!-- ===== HEADER ===== -->
@@ -16,7 +18,7 @@
       <div class="header container">
         <div class="nav-bar">
           <div class="brand">
-            <a href="index.html">
+            <a href="#">
               <h1><span>D</span>ream <span>T</span>ire</h1>
             </a>
           </div>
@@ -36,11 +38,11 @@
                   <li><a href="#">휠얼라이먼트</a></li>                  
                 </ul>              
               </li>
-              <li><a href="#projects" data-after="event">이벤트</a></li>
-              <li class="drop"><a href="#contact" data-after="Customer center">고객센터 <span class="fa fa-plus"></span></a>
+              <li><a href="#event" data-after="event">이벤트</a></li>
+              <li class="drop"><a href="#customer" data-after="Customer center">고객센터 <span class="fa fa-plus"></span></a>
                 <ul class="dropdown">
-                  <li><a href="#contactlist">공지 사항</a></li>
-                  <li><a href="#">1:1 고객상담</a></li>
+                  <li><a href="#">공지 사항</a></li>
+                  <li><a href="#contact">1:1 고객상담</a></li>
                   <li><a href="noticeadd.html">관리자</a></li>                  
                 </ul>              
               </li>              
@@ -50,7 +52,9 @@
         </div>
       </div>
       <span id="Back2Top">&#8593;</span>
-    </header>       
+    </header>
+
+    <!-- ===== MAIN ===== -->      
     <section id="hero">
         <div class="hero container">
           <div>
@@ -90,10 +94,79 @@
         </div> 
         </div>
     </section>  
-    <!-- ===== product ===== -->
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+      <div class="services container">
+        <div class="service-top">
+          <h2>Serv<span>i</span>ces</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            officia, quod id nesciunt ea ipsa eaque minima praesentium ducimus
+            soluta tempore dolorum, natus quae!
+          </p>
+        </div>
+        <div class="service-bottom">
+          <div class="service-item1">            
+            <div class="service-icon">
+              <img
+                src="https://img.icons8.com/bubbles/100/000000/services.png"
+              />
+            </div>
+            <h2>픽업</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              asperiores explicabo vitae deserunt laborum incidunt repellat
+              doloremque saepe!
+            </p>            
+          </div>
+          <div class="service-item2">
+            <div class="service-icon">
+              <img
+                src="https://img.icons8.com/bubbles/100/000000/services.png"
+              />
+            </div>
+            <h2>차량 관리</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              asperiores explicabo vitae deserunt laborum incidunt repellat
+              doloremque saepe!
+            </p>
+          </div>
+          <div class="service-item3">
+            <div class="service-icon">
+              <img
+                src="https://img.icons8.com/bubbles/100/000000/services.png"
+              />
+            </div>
+            <h2>휠 얼라이먼트</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              asperiores explicabo vitae deserunt laborum incidunt repellat
+              doloremque saepe!
+            </p>
+          </div>
+          <div class="service-item4">
+            <div class="service-icon">
+              <img
+                src="https://img.icons8.com/bubbles/100/000000/services.png"
+              />
+            </div>
+            <h2>휠 클리너</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+              asperiores explicabo vitae deserunt laborum incidunt repellat
+              doloremque saepe!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section id="contact" >
       <div class="contact container">     
-        <div class="content">
+        <div class="contact-title">
           <h2>Contact Us</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
@@ -132,6 +205,7 @@
             </div>
           </div>
           <div class="contactForm">
+            <form action="#">
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
@@ -177,21 +251,101 @@
                 <div class="col">
                   <input type="submit" value="Send" />
                 </div>
-              </div>        
+              </div>            
+            </form>
+          </div>  
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== NOTICE ===== -->
+    <section id="customer" >
+      <div class="customer container">     
+        <div class="customer-title">          
+          <h2>not<span>i</span>ce</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            officia, quod id nesciunt ea ipsa eaque minima praesentium ducimus
+            soluta tempore dolorum, natus quae!
+          </p>
+        </div>
+        <article>
+          <div class="customerInfo">
+            <div class="box">
+              <div class="text">
+                <h3><a href="#">공지 사항</a></h3>                
+              </div>
+            </div>          
+            <div class="box">
+              <div class="text">
+                <h3><a href="#">1 : 1 고객 상담</a></h3>                
+              </div>
+            </div>         
+            <div class="box">
+              <div class="text">
+                <h3><a href="#">관리자</a></h3>                
+              </div>
+            </div>
+          </div>
+          <div class="customerlist">
+            <table>
+              <tr>
+                  <th>번호</th>
+                  <th>제목</th>
+                  <th>작성일</th>
+                  <th>조회수</th>
+                  <th>조회수</th>
+                  <th>조회수</th>
+              </tr>
+              <tr>
+                  <td data-th="번호">1</td>                
+                  <td data-th="제목">안녕하세요 오랜만에 보는 얼굴인데 완전 성형수술해서.. </td>
+                  <td data-th="작성일">2020-09-28</td>
+                  <td data-th="조회수">10</td>
+                  <td data-th="조회수">10</td>
+                  <td data-th="조회수">10</td>
+              </tr>
+              <tr>
+                  <td data-th="번호">2</td>
+                  <td data-th="제목">처음 뵙겠습니다</td>
+                  <td data-th="작성일">2020--09-29</td>
+                  <td data-th="조회수">30</td>
+                  <td data-th="조회수">30</td>
+                  <td data-th="조회수">30</td>
+              </tr>
+              <tr>
+                  <td data-th="번호">3</td>
+                  <td data-th="제목">잘 지내요?</td>
+                  <td data-th="작성일">2020-10-11</td>
+                  <td data-th="조회수">04</td>
+                  <td data-th="조회수">04</td>
+                  <td data-th="조회수">04</td>
+              </tr>
+              <tr>
+                  <td data-th="번호">4</td>
+                  <td data-th="제목">오랜만......</td>
+                  <td data-th="작성일">2020-10-17</td>
+                  <td data-th="조회수">08</td>
+                  <td data-th="조회수">08</td>
+                  <td data-th="조회수">08</td>
+              </tr>
+            </table>
           </div>
         </article>
       </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
+
     <!-- ===== PORTFOLIO ===== -->
-    <!-- ===== CONTACT ===== -->
+    
     <!-- ===== FOOTER =====-->    
-    <!-- ===== SCROLL REVEAL ===== -->
+    
     <!-- ===== Top Js ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="resources/JS/top.js"></script>
-    <!-- ===== MAIN JS ===== -->
+
+    <!-- ===== SCROLL REVEAL ===== -->
     <script src="resources/JS/main.js"></script>    
   </body>
 </html>

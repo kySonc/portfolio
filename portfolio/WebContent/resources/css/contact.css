@@ -2,18 +2,18 @@
   flex-direction: column; /* 배치 방향 column */
   margin: 0 auto;
   padding: 100px 0;
-  background-color: #03080a;
+  background-color: var(--contact-background-color);
 }
 
-#contact .content {
+#contact .contact-title {
   max-width: 800px;
   text-align: center;
 }
-#contact .content h2 {
-  font-size: 5rem;
+#contact .contact-title h2 {
+  font-size: var(--section-title-font);
   color: var(--main-color);
 }
-#contact .content p {
+#contact .contact-title p {
   font-weight: 500;
   color: var(--main-color);
   margin: 10px;
@@ -22,7 +22,7 @@ article {
   display: flex;
   width: 90%;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
   /*border: 2px solid red;*/
 }
 #contact .contactInfo {
@@ -56,7 +56,7 @@ article {
 }
 #contact .contactInfo .box .text h3 {
   font-weight: 500;
-  color: #00bcd4;
+  color: var(--main-color);
 }
 
 #contact .contactForm {
@@ -93,7 +93,7 @@ article {
   position: relative;
   width: 100%;
   height: 40px;
-  color: #45faff;
+  color: var(--contact-ib-color);
 }
 .container .row100 .inputBox input,
 .container .row100 .inputBox.textarea textarea {
@@ -107,7 +107,7 @@ article {
   font-size: 18px;
   padding: 0 10px;
   z-index: 1;
-  color: #000;
+  color: var(--black-color);
 }
 .container .row100 .inputBox .text {
   position: absolute;
@@ -131,7 +131,7 @@ article {
   display: block;
   width: 100%;
   height: 2px;
-  background: #45f3ff;
+  background: var(--contact-ib-color);
   transition: 0.5s;
   border-radius: 2px;
   pointer-events: none; /*커서 없앰 */
@@ -165,7 +165,7 @@ input[type="submit"] {
   padding: 7px 35px;
   cursor: pointer;
   outline: none;
-  background: #45f3ff;
+  background: var(--contact-ib-color);
   color: #000;
   font-size: 18px;
   border-radius: 2px;

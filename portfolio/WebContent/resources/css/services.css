@@ -1,36 +1,29 @@
-p {
-  color: black;
-  font-size: 1.4rem;
-  margin-top: 5px;
-  line-height: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 0.05rem;
-}
-.section-title {
-  font-size: 5rem;
-  font-weight: 300;
-  color: black;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  text-align: center;
-}
-.section-title span {
-  color: crimson;
-}
 #services .services {
   flex-direction: column; /* 배치 방향 column */
-  text-align: center;
-  max-width: 1500px;
   margin: 0 auto;
   padding: 100px 0;
+  background-color: var(--services-background-color);
 }
 #services .service-top {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+#services .service-top h2 {
+  font-size: var(--section-title-font);
+  color: var(--black-color);
+  letter-spacing: 0.2rem;
+}
+#services .service-top h2 span {
+  color: var(--text-animation-color);
+}
+#services .service-top p {
+  font-weight: 500;
+  color: var(--title-p-color);
+  margin: 10px;
 }
 #services .service-bottom {
   display: flex;
+  width: 90%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap; /* 줄 바꿈 허용 */
@@ -158,3 +151,21 @@ p {
   font-size: 1.6rem;
 }
 /* End Services Section */
+@media only screen and (min-width: 1194px) {
+  #services .service-bottom .service-item1 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item2 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item3 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #services .service-bottom .service-item4 {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+}

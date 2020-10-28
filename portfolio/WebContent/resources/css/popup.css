@@ -4,32 +4,6 @@
   outline: none;
   box-sizing: border-box;
 }
-
-.show-btn {
-  background: #fff;
-  padding: 10px 20px;
-  font-size: 3.7rem;
-  font-weight: 500;
-  color: #3498db;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-.show-btn {
-  display: inline-block;
-  color: crimson;
-  width: 200px;
-  border-radius: 5px;
-  background-color: transparent; /* 배경색이 없다 */
-  border: 2px solid crimson;
-  padding: 10px 30px; /* 버튼 크기 조절 */
-  font-size: var(--butt-font-size);
-  text-align: center;
-  letter-spacing: 0.1rem; /*글자 사이의 간격 */
-  margin-top: 10px; /* 버튼 상단 여백 */
-  transition: 0.3s ease; /*애니메이션 적용 f-s-f*/
-  transition-property: background-color, color; /*트랜지션 적용 속성*/
-}
-
 .popup {
   position: absolute;
   top: 50%;
@@ -41,7 +15,7 @@ input[type="checkbox"] {
 }
 .popup {
   display: none;
-  background: #fff;
+  background: var(--white-color);
   width: 350px;
   padding: 30px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -57,7 +31,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .popup .close-btn:hover {
-  color: #3498db;
+  color: var(--popup-close-color);
 }
 .popup .text {
   display: block;
@@ -86,14 +60,14 @@ form .data input {
   border: 1px solid silver;
 }
 form .data input:focus {
-  border-color: #3498db;
+  border-color: var(--popup-close-color);
   border-bottom-width: 2px;
 }
 form .forgot-pass {
   margin-top: -8px;
 }
 form .forgot-pass a {
-  color: #3498db;
+  color: var(--popup-close-color);
   text-decoration: none;
 }
 form .forgot-pass a:hover {
@@ -117,10 +91,10 @@ form .btn .inner {
   transition: all 0.4s;
   background: -webkit-linear-gradient(
     right,
-    #56d8e4,
-    #9f01ea,
-    #56d8e4,
-    #9f01ea
+    var(--popup-border-color),
+    var(--drop-color),
+    var(--popup-border-color),
+    var(--drop-color)
   );
 }
 

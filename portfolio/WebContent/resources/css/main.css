@@ -5,15 +5,25 @@
 /*===== Colores =====*/
 :root {
   --main-color: #00d9e4;
+  --popup-border-color: #56d8e4;
+  --popup-close-color: #3498db;
+  --contact-ib-color: #45faff;
   --white-color: #fafaff;
   --text-color: #fff;
-  --black-color: black;
-  --join-hover-color: blue;
+  --black-color: #000;
+  --join-hover-color: gold;
   --header-color: rgba(31, 30, 30, 0.4);
   --view-color: rgb(31, 30, 30);
   --drop-color: #2c0a0b;
   --main-animation-color: crimson;
   --text-animation-color: crimson;
+  --title-p-color: #2a2f25;
+}
+
+/*===== background color =====*/
+:root {
+  --contact-background-color: #03080a;
+  --services-background-color: #f2f2f2;
 }
 
 /*===== font size =====*/
@@ -24,6 +34,7 @@
   --nav-a-font: 1.8rem;
   --brand-h1-font: 3rem;
   --view-hover-font: 6rem;
+  --section-title-font: 5em;
 }
 
 /*===== Marginse =====*/
