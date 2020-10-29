@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+/*main layout*/
+
+#hero .hero {
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
 
 .join {
   display: grid;
@@ -10,8 +16,8 @@
 .wrapper {
   overflow: hidden;
   max-width: 390px;
-  background: #fff;
-  padding: 30px;
+  background: var(--text-color);
+  padding: 20px 10px;
   border-radius: 5px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
@@ -24,6 +30,7 @@
   font-size: 35px;
   font-weight: 600;
   text-align: center;
+  padding: 0px 5px;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* login~signup 글자 슬라이드 속도 조절 */
 }
 .wrapper .form-container {
@@ -39,7 +46,7 @@
   border-radius: 5px;
   margin: 30px 0 10px 0;
   justify-content: space-between;
-  border: 1px solid lightgray;
+  border: 1px solid var(--join-border-color);
 }
 .slide-controls .slide {
   height: 100%;
@@ -54,7 +61,7 @@
   transition: all 0.6s ease;
 }
 .slide-controls .signup {
-  color: #000;
+  color: var(--black-color);
 }
 .slide-controls .slide-tab {
   position: absolute;
@@ -64,7 +71,11 @@
   z-index: 0;
   border-radius: 5px;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* login 슬라이드 속도 조절 */
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  background: -webkit-linear-gradient(
+    left,
+    var(--drop-color),
+    var(--text-animation-color)
+  );
 }
 input[type="radio"] {
   display: none;
@@ -73,10 +84,10 @@ input[type="radio"] {
   left: 50%;
 }
 #signup:checked ~ .signup {
-  color: #fff;
+  color: var(--text-color);
 }
 #signup:checked ~ .login {
-  color: #000;
+  color: var(--black-color);
 }
 .form-container .form-inner {
   display: flex;
@@ -103,14 +114,14 @@ input[type="radio"] {
   transition: all o.4s ease;
 }
 .form-inner form .field input:focus {
-  border-color: #fc83bb;
+  border-color: var(--text-animation-color);
 }
 .form-inner form .pass-link {
   margin-top: 5px;
 }
 .form-inner form .pass-link a,
 .form-inner form .signup-link a {
-  color: #fa4299;
+  color: var(--join-a-color);
   text-decoration: none;
 }
 .form-inner form .signup-link {
@@ -128,5 +139,9 @@ form .field input[type="submit"] {
   padding-left: 0px;
   border: none;
   cursor: pointer;
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  background: -webkit-linear-gradient(
+    left,
+    var(--drop-color),
+    var(--text-animation-color)
+  );
 }

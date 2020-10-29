@@ -12,7 +12,7 @@ const menu_item = document.querySelectorAll(".header .nav-bar .nav-list ul li a"
 //scroll nav-bar backgroundColor//
 document.addEventListener("scroll", () => {
     var scroll_position = window.scrollY;
-    if (scroll_position > 250) {
+    if (scroll_position > 50) {
       header.style.backgroundColor = "#29323c";
     } else {
       header.style.backgroundColor = "transparent";
