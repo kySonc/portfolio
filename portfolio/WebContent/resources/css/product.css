@@ -24,14 +24,15 @@
 #product .slider {
   justify-content: center;
   align-items: center;
-  background-color: var(--header-color);
-  border-radius: 5px;
+  background-color: #ecebeb;
+  border: 1px solid #555758;
   width: 73%;
+  padding: 20px 0px;
 }
 
 #product .slider .imgbox {
   width: 220px;
-  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   overflow: hidden;
   margin: 25px;
@@ -52,29 +53,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 15px;
   box-sizing: border-box;
-  font-family: calibri;
   background-color: #ffffff;
+  background: #9ae7f1;
 }
 #product .slider .detail-box .type {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 #product .slider .detail-box .type a {
   color: #222222;
-  margin: 5px 0px;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   padding-right: 8px;
 }
 #product .slider .detail-box .type span {
-  color: rgba(26, 26, 26, 0.5);
+  color: red;
+  font-size: 1.3rem;
+  margin: 5px 0px;
 }
 #product .slider .detail-box .price {
   color: #333333;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-family: poppins;
   letter-spacing: 0.5px;
 }
