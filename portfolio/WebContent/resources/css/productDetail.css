@@ -1,0 +1,127 @@
+#productDetail .productDetail {
+  background-color: var(--contact-background-color);
+}
+.productDetail-Box {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 700px;
+  height: 400px;
+  background-color: #fff;
+  margin: 20px;
+}
+.productDetail-Box .imgBx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background: #006dbc;
+}
+.productDetail-Box .imgBx::before {
+  content: "Winter";
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #000;
+  opacity: 0.1;
+  font-size: 5em;
+  font-weight: 800;
+}
+.productDetail-Box .imgBx img {
+  position: relative;
+  width: 350px;
+  transform: rotate(-30deg);
+  left: -50px;
+}
+.productDetail-Box .details {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.productDetail-Box .details .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.productDetail-Box .details h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 3rem;
+  color: #444;
+}
+.productDetail-Box .details h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+}
+.productDetail-Box .details h3:nth-child(5) {
+  text-align: right;
+}
+.reviews {
+  font-size: 2rem;
+  color: var(--text-animation-color);
+}
+.productDetail-Box .details p {
+  max-width: 100%;
+  margin-left: 5%;
+  color: #333;
+  font-size: 15px;
+}
+.productDetail-Box .details h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  color: #a2a2a2;
+  float: left;
+}
+.productDetail-Box .details button {
+  background-color: #006dbc;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 15px 20px;
+  margin-top: 5px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 40px;
+  float: right;
+  cursor: pointer;
+}
+@media (max-width: 1080px) {
+  .productDetail-Box {
+    height: auto;
+  }
+  .productDetail-Box .imgBx {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  .productDetail-Box .imgBx img {
+    left: initial;
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+  .productDetail-Box .details {
+    width: 100% !important;
+    height: auto;
+    padding: 20px;
+  }
+  .productDetail-Box .details p {
+    margin-left: 0;
+    color: #333;
+  }
+}
