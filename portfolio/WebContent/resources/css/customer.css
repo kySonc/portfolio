@@ -90,6 +90,32 @@ article {
 }
 
 /* paging */
+#customer .customerlist .paging {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 10px;
+}
+#customer .customerlist .paging a {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: black;
+}
+#customer .customerlist .paging a.active {
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+  color: white;
+}
+#customer .customerlist .paging a:hover:not(.active) {
+  background-color: #ddd;
+}
+#customer .customerlist .paging a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#customer .customerlist .paging a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
 /*===== Media Query =====*/
 
