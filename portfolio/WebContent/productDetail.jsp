@@ -84,7 +84,7 @@
     <script src="resources/js/main.js"></script>
     <!-- ===== Top Js ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="resources/js/top.js"></script>
+    <script src="./resources/script/top.js"></script>
     
   </body>
 </html>

@@ -683,15 +683,15 @@
 
     <!-- ===== Top Js ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="./resources/js/lightslider.js"></script>
-    <script src="resources/js/top.js"></script>
+    <script type="text/javascript" src="./resources/script/lightslider.js"></script>
+    <script src="./resources/script/top.js"></script>
 
     <!-- ===== PRODUCT SLIDER =====-->
-    <script type="text/javascript" src="resources/js/productslider.js"></script>
+    <script type="text/javascript" src="./resources/script/productslider.js"></script>
     
     
 
     <!-- ===== SCROLL REVEAL ===== -->
-    <script src="resources/js/main.js"></script>    
+    <script src="./resources/script/main.js"></script>    
   </body>
 </html>
