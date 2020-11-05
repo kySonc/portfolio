@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +24,7 @@
             <div class="hamburger"><div class="bar"></div></div>
             <ul>
               <li><a href="main.jsp#product" data-after="Tier">타이어</a></li>
-              <li class="drop"><a href="main.html#services" data-after="services" class="dropbtn">서비스 <span class="fa fa-plus"></span></a>
+              <li class="drop"><a href="main.jsp#services" data-after="services" class="dropbtn">서비스 <span class="fa fa-plus"></span></a>
                 <ul class="dropdown">
                   <li class="drop2"><a href="#" >나의 차량관리 <span class="fa fa-plus"></span></a>
                     <ul class="dropdown2">
@@ -50,11 +51,7 @@
       </div>
       <span id="Back2Top">&#8593;</span>
     </header>       
-    <section id="hero">
-        <div class="hero container">
-            
-        </div>
-    </section>  
+      
     <!-- ===== ABOUT ===== -->
     <!-- ===== SKILLS ===== -->
     <!-- ===== PORTFOLIO ===== -->
