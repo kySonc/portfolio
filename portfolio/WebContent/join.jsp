@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DreamTire</title>
+    <link rel="shortcut icon" href="/resources/icon/controls.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="resources/css/header.css">
-    <link rel="stylesheet" href="resources/css/top.css">    
-    <link rel="stylesheet" href="resources/css/join.css">    
+    <link rel="stylesheet" href="/resources/css/header.css">
+    <link rel="stylesheet" href="/resources/css/top.css">    
+    <link rel="stylesheet" href="/resources/css/join.css">    
   </head>
   <body>
     <!-- ===== HEADER ===== -->
@@ -62,18 +63,19 @@
                 </form>
               </div>
             </div>
-            </div>
-          </div>          
-        </div>
+          </div>
+        </div>        
     </section>
     
     <!-- ===== JOIN JS ===== -->
-    <script src="./resources/script/join.js"></script>
+    <script src="/resources/script/join.js"></script>
+    
     <!-- ===== MAIN JS ===== -->
-    <script src="./resources/script/main.js"></script>
-    <!-- ===== Top Js ===== -->
+    <script src="/resources/script/main.js"></script>
+    
+    <!-- ===== Top JS ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="./resources/script/top.js"></script>
+    <script src="/resources/script/top.js"></script>
     
   </body>
 </html>

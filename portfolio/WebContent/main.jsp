@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DreamTire</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="shortcut icon" href="resources/icon/w1.png" />    
-    <link rel="stylesheet" href="resources/css/top.css">
-    <link rel="stylesheet" href="resources/css/main.css">
-    <link rel="stylesheet" href="resources/css/popup.css">
-    <link rel="stylesheet" href="resources/css/product.css" />    
-    <link rel="stylesheet" href="resources/css/lightslider.css" />
-    <link rel="stylesheet" href="resources/css/services.css">
-    <link rel="stylesheet" href="resources/css/contact.css">
-    <link rel="stylesheet" href="resources/css/customer.css">    
+    <link rel="shortcut icon" href="/resources/icon/controls.png" />
+    <link rel="stylesheet" href="/resources/css/top.css">
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/popup.css">
+    <link rel="stylesheet" href="/resources/css/product.css" />    
+    <link rel="stylesheet" href="/resources/css/lightslider.css" />
+    <link rel="stylesheet" href="/resources/css/services.css">
+    <link rel="stylesheet" href="/resources/css/contact.css">
+    <link rel="stylesheet" href="/resources/css/customer.css">    
   </head>
   <body>
     <!-- ===== HEADER ===== -->
@@ -182,7 +182,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -207,7 +207,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -232,7 +232,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -257,7 +257,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -282,7 +282,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -307,7 +307,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -332,7 +332,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -357,7 +357,7 @@
               <div class="imgbox">
                 <!--img box------------------->
                 <div class="slide-img">
-                  <img src="./resources/images/t1.jpg" alt="j1" />
+                  <img src="/resources/images/t1.jpg" alt="j1" />
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
@@ -397,7 +397,7 @@
           <div class="service-item1">            
             <div class="service-icon">
               <img
-                src="./resources/icon/픽업.png"
+                src="/resources/icon/픽업.png"
               />
             </div>
             <h2>픽업</h2>
@@ -410,7 +410,7 @@
           <div class="service-item2">
             <div class="service-icon">
               <img
-                src="./resources/icon/차량관리.png"
+                src="/resources/icon/차량관리.png"
               />
             </div>
             <h2>차량 관리</h2>
@@ -423,7 +423,7 @@
           <div class="service-item3">
             <div class="service-icon">
               <img
-                src="./resources/icon/얼라이먼트.png"
+                src="/resources/icon/얼라이먼트.png"
               />
             </div>
             <h2>휠 얼라이먼트</h2>
@@ -436,7 +436,7 @@
           <div class="service-item4">
             <div class="service-icon">
               <img
-                src="./resources/icon/세차.png"
+                src="/resources/icon/세차.png"
               />
             </div>
             <h2>휠 클리너</h2>
@@ -644,17 +644,17 @@
     <!-- ===== PORTFOLIO ===== -->    
     <!-- ===== FOOTER =====-->    
 
-    <!-- ===== Top Js ===== -->
-    <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="./resources/script/lightslider.js"></script>
-    <script src="./resources/script/top.js"></script>
+    <!-- ===== Top JS ===== -->
+    <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>    
+    <script src="/resources/script/top.js"></script>
 
     <!-- ===== PRODUCT SLIDER =====-->
-    <script type="text/javascript" src="./resources/script/productslider.js"></script>
+    <script type="text/javascript" src="/resources/script/lightslider.js"></script>
+    <script type="text/javascript" src="/resources/script/productslider.js"></script>
     
     
 
     <!-- ===== SCROLL REVEAL ===== -->
-    <script src="./resources/script/main.js"></script>    
+    <script src="/resources/script/main.js"></script>    
   </body>
 </html>
