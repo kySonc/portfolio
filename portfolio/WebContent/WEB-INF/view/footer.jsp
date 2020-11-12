@@ -22,7 +22,7 @@
                     <a href="https://github.com/kySonc" class="footer__link"><i class="bx bxl-github"></i></a>
                     <a href="#" class="footer__link"><i class="bx bxl-dribbble"></i></a>
                 </div>
-                <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
+                <p class="footer__copy">&#169; 2020 kySonc. All right reserved</p>
             </div>
         </footer>
 </body>

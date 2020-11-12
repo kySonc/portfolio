@@ -7,7 +7,7 @@ public class BbsDto {
 	private int bbsId = 1, bbsHit = 0;
 	private String bbsTitle, bbsContent, bbsCategory, id;
 	private Timestamp bbsDate;
-	
+		
 	//구분 번호 (프라이머리 키)
 	public int getBbsId() {
 		return bbsId;

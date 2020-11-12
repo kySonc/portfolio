@@ -14,8 +14,9 @@ public class BbsDao {
 	private ResultSet rs;
 	private int result = 0;
 	
+	
 	private BbsDao() {
-		super();
+				
 	}
 	
 	
@@ -27,7 +28,7 @@ public class BbsDao {
 	//DB에 접속 컨넥션 메소드
 	public Connection getConnect() {
 		String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
-		String id = "root", pw = "1234";
+		String id = "root", pw = "rmrqhr!58";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -225,5 +226,28 @@ public class BbsDao {
 		}
 		return result;
 	}
+	
+	//Scalar 함수 게시글 총 개수
+	public int getCount() {
+		int bbscount = 0;
+		con = getConnect();
+		String sql = "SELECT COUNT(bbsID) bbscount FROM bbs";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				bbscount = rs.getInt("bbscount");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(con, pstmt, rs);
+		}
+		return bbscount;		
+	}	
 
+	
 }

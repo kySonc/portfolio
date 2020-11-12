@@ -121,7 +121,12 @@
           </div>  
         </article>
       </div>
-    </section>        
+    </section>
+    
+    <!-- ===== FOOTER =====-->     
+    <%@ include file="footer.jsp" %>    
+    
+            
     <!-- ===== SCROLL REVEAL ===== -->
     
     <!-- ===== MAIN JS ===== -->

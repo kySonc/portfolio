@@ -499,7 +499,8 @@
         <%-- 모든 데이터가 저장된 list 가져오기 --%>
 		<%
 			BbsDao bbsDao = BbsDao.getInstance();
-			List<BbsDto> list = bbsDao.selectList(); 
+			List<BbsDto> list = bbsDao.selectList();
+			
 		%>
           <div class="noticelist">
             <table>

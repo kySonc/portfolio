@@ -54,6 +54,7 @@
 			  	<c:if test="${sessionID != null }">
 			  		<!-- sessionID에 아이디값이 있으면 로그아웃 버튼 출력 -->
 			  		<a href="logout.do"><span>로그아웃</span></a>			  					  	
+			  		<a href="memberout.do?id=${sessionID}"><span>회원 탈퇴</span></a>			  					  	
 			  	</c:if>
 			  </li>
             </ul>

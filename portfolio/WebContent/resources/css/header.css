@@ -14,7 +14,7 @@
   --black-color: #000;
   --join-hover-color: gold;
   
-  --header-color: rgba(31, 30, 30, 0.4);
+  --header-color: rgba(31, 30, 30, 0.1);
   /*--header-color: rgba(47, 53, 66,1.0);*/
   --view-color: rgb(31, 30, 30);
   --drop-color: #2f0a0d; 
@@ -62,8 +62,8 @@ ul {
   list-style: none;
 }
 a {
-  text-decoration: none; /* 밑줄 지우기 */
-  color: inherit; /*부모의 컬러상속*/
+  text-decoration: none; /* 諛묒쨪 吏��슦湲� */
+  color: inherit; /*遺�紐⑥쓽 而щ윭�긽�냽*/
 }
 
 /*===== LAYOUT =====*/
@@ -81,22 +81,22 @@ a {
 #hero {
   background-image: url(../images/j1.jpg);
   background-repeat: no-repeat;
-  background-size: cover; /*가로 세로 비율 유지 */
-  background-position: top center; /*위치 조정  상단 가운데*/
-  position: relative; /*위치 조정 */
-  z-index: 1; /* 다른 요소보다 높게 */
+  background-size: cover; /*媛�濡� �꽭濡� 鍮꾩쑉 �쑀吏� */
+  background-position: top center; /*�쐞移� 議곗젙  �긽�떒 媛��슫�뜲*/
+  position: relative; /*�쐞移� 議곗젙 */
+  z-index: 1; /* �떎瑜� �슂�냼蹂대떎 �넂寃� */
 }
-/* img 투명도 처리 */
+/* img �닾紐낅룄 泥섎━ */
 #hero:after {
   content: "";
-  position: absolute; /* 가장 가까운 위치 지정 조상 요소에 대해 상대적으로 배치 */
+  position: absolute; /* 媛��옣 媛�源뚯슫 �쐞移� 吏��젙 議곗긽 �슂�냼�뿉 ���빐 �긽���쟻�쑝濡� 諛곗튂 */
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
   background-color: var(--black-color);
-  opacity: 0.7; /* 투명도 0.0~1.0 */
-  z-index: -1; /* 기본 요소의 위치보다 아래로 한다 */
+  opacity: 0.7; /* �닾紐낅룄 0.0~1.0 */
+  z-index: -1; /* 湲곕낯 �슂�냼�쓽 �쐞移섎낫�떎 �븘�옒濡� �븳�떎 */
 }
 
 /*===== Header =====*/
@@ -113,16 +113,16 @@ a {
 
 /*nav layout*/
 #header {
-  position: fixed; /*고정된 위치 설정 상위요소에 영향을 받지 않는다*/
+  position: fixed; /*怨좎젙�맂 �쐞移� �꽕�젙 �긽�쐞�슂�냼�뿉 �쁺�뼢�쓣 諛쏆� �븡�뒗�떎*/
   z-index: 1000;
   left: 0;
   top: 0;
-  width: 100vw; /* view port 너비 */
+  width: 100vw; /* view port �꼫鍮� */
   height: auto;
 }
 #header .header {
-  min-height: 8vh; /* 요소의 최소높이 */
-  background-color: var(--header-color); /*nav-bar 투명도 */  
+  min-height: 8vh; /* �슂�냼�쓽 理쒖냼�넂�씠 */
+  background-color: var(--header-color); /*nav-bar �닾紐낅룄 */  
   transition: 0.3s ease background-color; /*scroll nav-bar*/  
   border-style: none;
 }
@@ -131,7 +131,7 @@ a {
   align-items: center;
   width: 100%;
   height: 100%;
-  justify-content: space-between; /* 요소 양끝으로 배치*/
+  justify-content: space-between; /* �슂�냼 �뼇�걹�쑝濡� 諛곗튂*/
   max-width: 1294px;
   padding: 0 10px;
 }
@@ -141,20 +141,20 @@ a {
   background-color: var(--view-color);
   width: 100vw;
   height: 100vh;
-  left: 100%; /* hamburger view 숨김 */
-  /*left: 0;*/ /* hamburger view 숨김 */
+  left: 100%; /* hamburger view �닲源� */
+  /*left: 0;*/ /* hamburger view �닲源� */
   top: 0;
-  display: flex; /* flex 로 바꾸고 옆으로 나열*/
-  justify-content: center; /* a 태그 중앙배치 */
+  display: flex; /* flex 濡� 諛붽씀怨� �쁿�쑝濡� �굹�뿴*/
+  justify-content: center; /* a �깭洹� 以묒븰諛곗튂 */
   align-items: center;
-  flex-direction: column; /* a 태그 세로정열 */
+  flex-direction: column; /* a �깭洹� �꽭濡쒖젙�뿴 */
   z-index: -1;
   /*overflow: hidden;*/
   transition: 0.7s ease left;
 }
 /*hamburger view active */
 #header .nav-list ul.active {
-  left: 0; /* hamburger view 보임 */
+  left: 0; /* hamburger view 蹂댁엫 */
 }
 
 #header .nav-list ul a {
@@ -169,7 +169,7 @@ a {
 }
 /* view text shadow */
 #header .nav-list ul a::after {
-  content: attr(data-after); /* dataset객체(attr)를 통해 저장된 속성 가져오기 */
+  content: attr(data-after); /* dataset媛앹껜(attr)瑜� �넻�빐 ���옣�맂 �냽�꽦 媛��졇�삤湲� */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -192,14 +192,14 @@ a {
   width: 60px;
   display: inline-block;
   border: 3px solid var(--main-color);
-  border-radius: 50%; /* 원형 만들기 */
+  border-radius: 50%; /* �썝�삎 留뚮뱾湲� */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 500;
-  transform: scale(0.7); /* hamburger 축소 */
+  transform: scale(0.7); /* hamburger 異뺤냼 */
   margin-right: 20px;
 }
 /*hamburger animation*/
@@ -210,7 +210,7 @@ a {
   width: 100%;
   border-radius: 50%;
   border: 3px solid white;
-  animation: hamburger_plus 1s ease infinite; /*keyframes 이름 무제한 */
+  animation: hamburger_plus 1s ease infinite; /*keyframes �씠由� 臾댁젣�븳 */
 }
 /*hamburger keyframes*/
 @keyframes hamburger_plus {
@@ -225,7 +225,7 @@ a {
 }
 /*hamburger info*/
 #header .hamburger .bar {
-  height: 2px; /*작대기 만들기*/
+  height: 2px; /*�옉��湲� 留뚮뱾湲�*/
   width: 30px;
   position: relative;
   background-color: var(--main-color);
@@ -240,22 +240,22 @@ a {
   left: 0px;
   background-color: var(--main-color);
   transition: 0.3s ease;
-  transition-property: top, bottom; /* top, bottom 트랜지션 적용*/
+  transition-property: top, bottom; /* top, bottom �듃�옖吏��뀡 �쟻�슜*/
 }
-/* 하단 작대기 */
+/* �븯�떒 �옉��湲� */
 #header .hamburger .bar::after {
   top: 8px;
 }
-/* 상단 작대기 */
+/* �긽�떒 �옉��湲� */
 #header .hamburger .bar::before {
   bottom: 8px;
 }
 /* hamburger click .active */
 #header .hamburger.active .bar::before {
-  bottom: 0; /*상단 작대기 사라짐*/
+  bottom: 0; /*�긽�떒 �옉��湲� �궗�씪吏�*/
 }
 #header .hamburger.active .bar::after {
-  top: 0; /*하단 작대기 사라짐*/
+  top: 0; /*�븯�떒 �옉��湲� �궗�씪吏�*/
 }
 
 /*dorpdown nav*/
@@ -270,17 +270,17 @@ a {
   flex-direction: column;
   background-color: var(--drop-color);
   transition: 0.7s ease;
-  left: inherit; /*부모상속 받아 위치 이동 */
-  top: -250px; /* 위로 위치 이동 화면 밖 */
-  z-index: -10; /*menu bar 보다 아래서 이동*/
-  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  left: inherit; /*遺�紐⑥긽�냽 諛쏆븘 �쐞移� �씠�룞 */
+  top: -250px; /* �쐞濡� �쐞移� �씠�룞 �솕硫� 諛� */
+  z-index: -10; /*menu bar 蹂대떎 �븘�옒�꽌 �씠�룞*/
+  visibility: hidden; /*�닲源�(�옄�떊�쓽 �쁺�뿭�� 怨꾩냽 李⑥�) */
   border-style: none;
   padding-top: 10px;
   width: auto;
 }
 #header .nav-list ul .drop:hover .dropdown {
-  visibility: visible; /*박스가 보여짐*/
-  top: 80%; /*위에서 아래로 내려옴 */
+  visibility: visible; /*諛뺤뒪媛� 蹂댁뿬吏�*/
+  top: 80%; /*�쐞�뿉�꽌 �븘�옒濡� �궡�젮�샂 */
   transition: 1s ease;
 }
 #header .nav-list .dropdown .drop2 {
@@ -295,12 +295,12 @@ a {
   transition: 0.7s ease;
   top: -400px;
   left: 400px;
-  visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
+  visibility: hidden; /*�닲源�(�옄�떊�쓽 �쁺�뿭�� 怨꾩냽 李⑥�) */
 }
 
 #header .nav-list ul .drop2:hover .dropdown2 {
   position: absolute;
-  visibility: visible; /*박스가 보여짐*/
+  visibility: visible; /*諛뺤뒪媛� 蹂댁뿬吏�*/
   transition: 0.7s ease;
   margin: 0px;
   padding: 0px;
@@ -332,10 +332,10 @@ a {
     display: none;
   }
   #header .nav-bar {
-    z-index: 0; /*dropdown 걸림방지 */
+    z-index: 0; /*dropdown 嫄몃┝諛⑹� */
   }
   #header .nav-list ul {
-    position: initial; /* 처음 값과 동일 */
+    position: initial; /* 泥섏쓬 媛믨낵 �룞�씪 */
     display: flex;
     flex-direction: row;
     height: auto;
