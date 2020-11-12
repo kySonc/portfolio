@@ -1,5 +1,11 @@
+<%@page import="java.sql.Timestamp"%>
+<%@page import="com.kysonc.dto.BbsDto"%>
+<%@page import="java.util.List"%>
+<%@page import="com.kysonc.dao.BbsDao"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -9,15 +15,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="shortcut icon" href="/resources/icon/controls.png" />
     <link rel="stylesheet" href="/resources/css/top.css">
-    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" href="/resources/css/popup.css">
     <link rel="stylesheet" href="/resources/css/product.css" />    
     <link rel="stylesheet" href="/resources/css/lightslider.css" />
     <link rel="stylesheet" href="/resources/css/services.css">
     <link rel="stylesheet" href="/resources/css/contact.css">
-    <link rel="stylesheet" href="/resources/css/customer.css">    
+    <link rel="stylesheet" href="/resources/css/notice.css">    
   </head>
   <body>
+  	<c:if test="${loginResult == 1}">
+		<script>
+			alert("로그인 되었습니다.");
+		</script>
+	</c:if>
+  	<c:if test="${joinResult == 1}">
+			<script>
+			alert("로그인 되었습니다.");
+			</script>
+	</c:if>
+  	
     <!-- ===== HEADER ===== -->
     <%@ include file="header.jsp" %>
 
@@ -58,8 +75,7 @@
               </form>
             </div>
           </div>
-        </div> 
-        </div>
+        </div>        
     </section>  
 
     <!-- ===== PRODUCT ===== -->
@@ -86,14 +102,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -111,14 +127,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -136,14 +152,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -161,14 +177,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -186,14 +202,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -211,14 +227,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -236,14 +252,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -261,14 +277,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -286,14 +302,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -311,18 +327,18 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="productDetail.do" class="price">$23</a>
                 </div>
               </div>
             </li>
@@ -336,14 +352,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -361,14 +377,14 @@
                   <!--overlayer--------------->
                   <div class="overlay">
                     <!--buy btn----------------->
-                    <a href="productDetail.jsp" class="buy-btn">Buy Now</a>
+                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
                   </div>
                 </div>
                 <!--detail box---------------->
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="#">Rabbed Cardigan</a>
+                    <a href="productDetail.do">Rabbed Cardigan</a>
                     <span>Noe Arrival</span>
                   </div>
                   <!--price------------------->
@@ -450,10 +466,10 @@
       </div>
     </section>
 
-    <!-- ===== customer ===== -->
-    <section id="customer" >
-      <div class="customer container">     
-        <div class="customer-title">          
+    <!-- ===== notice ===== -->
+    <section id="notice" >
+      <div class="notice container">     
+        <div class="notice-title">          
           <h2>Not<span>i</span>ce</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
@@ -462,7 +478,7 @@
           </p>
         </div>
         <article>
-          <div class="customerInfo">
+          <div class="noticeInfo">
             <div class="box">
               <div class="text">
                 <h3><a href="#">공지 사항</a></h3>                
@@ -479,56 +495,53 @@
               </div>
             </div>
           </div>
-          <div class="customerlist">
+          
+        <%-- 모든 데이터가 저장된 list 가져오기 --%>
+		<%
+			BbsDao bbsDao = BbsDao.getInstance();
+			List<BbsDto> list = bbsDao.selectList(); 
+		%>
+          <div class="noticelist">
             <table>
               <tr>
                   <th>번호</th>
                   <th>제목</th>
+                  <th>내용</th>
+                  <th>작성자</th>
                   <th>작성일</th>
-                  <th>조회수</th>
-                  <th>조회수</th>
-                  <th>조회수</th>
+                  <th>조회</th>
               </tr>
+		<%
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd, hh:mm:ss");
+			int count = 0;
+			for (BbsDto b : list) {
+				String stDate = "";
+				Timestamp tDate = b.getBbsDate();
+				
+				if (tDate != null) {
+					stDate = sdf.format(tDate);
+				}				
+		%>    
+		        
               <tr>
-                  <td data-th="번호">1</td>                
-                  <td data-th="제목">안녕하세요 오랜만에 보는 얼굴인데 완전 성형수술해서.. </td>
-                  <td data-th="작성일">2020-09-28</td>
-                  <td data-th="조회수">10</td>
-                  <td data-th="조회수">10</td>
-                  <td data-th="조회수">10</td>
+                  <td data-th="번호"><%=b.getBbsId() %></td>                
+                  <td data-th="제목" class="letter"><b><a href="bbsview.do?bbsId=<%=b.getBbsId() %> "><p><%=b.getBbsTitle() %></P></a></b></td>
+                  <td data-th="내용" class="letter"><p><%=b.getBbsContent() %></p></td>
+                  <td data-th="작성자"><%=b.getId() %></td>
+                  <td data-th="작성일"><%=stDate %></td>
+                  <td data-th="조회"><%=b.getBbsHit() %></td>
               </tr>
-              <tr>
-                  <td data-th="번호">2</td>
-                  <td data-th="제목">처음 뵙겠습니다</td>
-                  <td data-th="작성일">2020-09-29</td>
-                  <td data-th="조회수">30</td>
-                  <td data-th="조회수">30</td>
-                  <td data-th="조회수">30</td>
-              </tr>
-              <tr>
-                  <td data-th="번호">3</td>
-                  <td data-th="제목">잘 지내요?</td>
-                  <td data-th="작성일">2020-10-11</td>
-                  <td data-th="조회수">04</td>
-                  <td data-th="조회수">04</td>
-                  <td data-th="조회수">04</td>
-              </tr>
-              <tr>
-                  <td data-th="번호">4</td>
-                  <td data-th="제목">오랜만......</td>
-                  <td data-th="작성일">2020-10-17</td>
-                  <td data-th="조회수">08</td>
-                  <td data-th="조회수">08</td>
-                  <td data-th="조회수">08</td>
-              </tr>
-              <tr>
-                  <td data-th="번호">4</td>
-                  <td data-th="제목">오랜만......</td>
-                  <td data-th="작성일">2020-10-17</td>
-                  <td data-th="조회수">08</td>
-                  <td data-th="조회수">08</td>
-                  <td data-th="조회수">08</td>
-              </tr>              
+        <%
+				
+			count++;
+			}
+			if (count == 0) {
+		%>
+				<tr><td colspan="7">작성한 게시글이 없습니다.</td></tr>		
+		<%
+			}
+			System.out.println("현재 게시글 " + count + "개");
+		%>                    
             </table>
             <div class="paging">
               <a href="#" class="fa fa-angle-double-left"></a>
@@ -586,7 +599,7 @@
             </div>
           </div>
           <div class="contactForm">
-            <form action="#">
+            <form action="write.do" method="post">
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
@@ -597,7 +610,7 @@
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="bbsTitle" required="required" />
                     <span class="text">Title</span>
                     <span class="line"></span>
                   </div>
@@ -622,7 +635,7 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox textarea">
-                    <textarea required="required"></textarea>
+                    <textarea name="bbsContent" required="required"></textarea>
                     <span class="text">Type your message Here...</span>
                     <span class="line"></span>
                   </div>
@@ -630,7 +643,10 @@
               </div>
               <div class="row100">
                 <div class="col">
-                  <input type="submit" value="Send" />
+                  <input type="submit" value="Send" />                  
+                </div>
+                <div class="col">                  
+                  <input type="reset" value="reset" />
                 </div>
               </div>            
             </form>
@@ -641,8 +657,10 @@
 
     
     
-    <!-- ===== PORTFOLIO ===== -->    
-    <!-- ===== FOOTER =====-->    
+    <!-- ===== PORTFOLIO ===== -->
+        
+    <!-- ===== FOOTER =====-->     
+    <%@ include file="footer.jsp" %>    
 
     <!-- ===== Top JS ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>    

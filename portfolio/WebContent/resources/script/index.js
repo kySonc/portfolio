@@ -13,7 +13,7 @@ const menu_item = document.querySelectorAll(".header .nav-bar .nav-list ul li a"
 document.addEventListener("scroll", () => {
     var scroll_position = window.scrollY;
     if (scroll_position > 50) {
-      header.style.backgroundColor = "#29323c";
+      header.style.backgroundColor = "#2f0a0d";
     } else {
       header.style.backgroundColor = "transparent";
     }

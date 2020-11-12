@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -57,18 +58,18 @@
             </div>
           </div>
           <div class="contactForm">
-            <form action="#">
+            <form action="bbsupdate.do" method="post">                      
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
                     <input type="text" name="" required="required" />
-                    <span class="text">Name</span>
+                    <span class="text">name : ${bbsupdate.id }</span>
                     <span class="line"></span>
                   </div>
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="bbsTitle" value="${bbsupdate.bbsTitle }" required="required"/>
                     <span class="text">Title</span>
                     <span class="line"></span>
                   </div>
@@ -77,7 +78,7 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="" value="kysonc@gmail.com" required="required"/>
                     <span class="text">Email</span>
                     <span class="line"></span>
                   </div>
@@ -85,7 +86,7 @@
                 <div class="col">
                   <div class="inputBox">
                     <input type="text" name="" required="required" />
-                    <span class="text">Mobile</span>
+                    <span class="text">조회수 : ${bbsview.bbsHit }</span>
                     <span class="line"></span>
                   </div>
                 </div>
@@ -93,23 +94,23 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox textarea">
-                    <textarea required="required"></textarea>
+                    <textarea name="bbsContent" required="required">${bbsupdate.bbsContent }</textarea>
                     <span class="text">Type your message Here...</span>
                     <span class="line"></span>
                   </div>
                 </div>
-              </div>
-              <div class="row100">
-                <div class="col">
-                  <input type="submit" value="등록" />
+              </div>               
+		      <div class="row100">
+				<div class="col">
+					<input type="submit" value="수정" />                	
                 </div>
-                <div class="col">
-                  <input type="submit" value="수정" />
-                </div>
-                <div class="col">
-                  <input type="submit" value="삭제" />
-                </div>
-              </div>            
+              	<div class="col">
+              		<input type="button" onClick="location.href='bbsdelete.do?bbsId=${bbsview.bbsId}#notice'" value="삭제" />              	
+              	</div>
+              </div>		      
+              <div style="display: none;" >
+				<input type="text" name="bbsId" value="${bbsupdate.bbsId }" />
+			  </div>			  
             </form>
           </div>  
         </article>
@@ -118,7 +119,7 @@
     <!-- ===== SCROLL REVEAL ===== -->
     
     <!-- ===== MAIN JS ===== -->
-    <script src="/resources/script/main.js"></script>
+    <script src="/resources/script/index.js"></script>
     <!-- ===== Top JS ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="/resources/script/top.js"></script>

@@ -132,7 +132,8 @@ input[type="radio"] {
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }
-form .field input[type="submit"] {
+
+.field input[type="button"] {
   color: #fff;
   font-size: 20px;
   font-weight: 500;
@@ -145,3 +146,17 @@ form .field input[type="submit"] {
     var(--text-animation-color)
   );
 }
+.field input[type="submit"] {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  border: none;
+  cursor: pointer;
+  background: -webkit-linear-gradient(
+    left,
+    var(--drop-color),
+    var(--text-animation-color)
+  );
+}
+

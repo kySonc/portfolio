@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap");
 
 /*===== VARIABLES CSS =====*/
+
 /*===== Colores =====*/
 :root {
   --main-color: #00d9e4;
@@ -12,9 +13,12 @@
   --text-color: #fff;
   --black-color: #000;
   --join-hover-color: gold;
+  
   --header-color: rgba(31, 30, 30, 0.4);
+  /*--header-color: rgba(47, 53, 66,1.0);*/
   --view-color: rgb(31, 30, 30);
-  --drop-color: #4a0404;
+  --drop-color: #2f0a0d; 
+  /*--drop-color: rgb(31, 30, 30);*/  
   --main-animation-color: crimson;
   --text-animation-color: crimson;
   --title-p-color: #2a2f25;
@@ -61,8 +65,6 @@ a {
   text-decoration: none; /* 밑줄 지우기 */
   color: inherit; /*부모의 컬러상속*/
 }
-/*===== CLASS CSS =====*/
-/*===== header =====*/
 
 /*===== LAYOUT =====*/
 .container {
@@ -120,8 +122,8 @@ a {
 }
 #header .header {
   min-height: 8vh; /* 요소의 최소높이 */
-  background-color: var(--header-color); /*nav-bar 투명도 */
-  transition: 0.3s ease background-color; /*scroll nav-bar*/
+  background-color: var(--header-color); /*nav-bar 투명도 */  
+  transition: 0.3s ease background-color; /*scroll nav-bar*/  
   border-style: none;
 }
 #header .nav-bar {
@@ -146,7 +148,7 @@ a {
   justify-content: center; /* a 태그 중앙배치 */
   align-items: center;
   flex-direction: column; /* a 태그 세로정열 */
-  z-index: 1;
+  z-index: -1;
   /*overflow: hidden;*/
   transition: 0.7s ease left;
 }
@@ -175,7 +177,7 @@ a {
   color: rgba(240, 248, 255, 0.021);
   font-size: var(--view-hover-font);
   letter-spacing: 50px;
-  z-index: -1;
+  z-index: 1;
   transition: 0.3s ease letter-spacing;
 }
 
@@ -270,7 +272,7 @@ a {
   transition: 0.7s ease;
   left: inherit; /*부모상속 받아 위치 이동 */
   top: -250px; /* 위로 위치 이동 화면 밖 */
-  z-index: -1; /*menu bar 보다 아래서 이동*/
+  z-index: -10; /*menu bar 보다 아래서 이동*/
   visibility: hidden; /*숨김(자신의 영역은 계속 차지) */
   border-style: none;
   padding-top: 10px;
@@ -322,14 +324,6 @@ a {
 #header .nav-list ul span:hover {
   color: var(--join-hover-color);
 }
-/*===== Show menu =====*/
-/*===== Active menu =====*/
-/*===== HOME =====*/
-/*===== ABOUT =====*/
-/*===== SKILLS =====*/
-/*===== PORTFOLIO =====*/
-/*===== CONTACT =====*/
-/*===== FOOTER =====*/
 
 /*===== MEDIA QUERISE =====*/
 @media only screen and (min-width: 1194px) {
