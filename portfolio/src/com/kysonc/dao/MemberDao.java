@@ -4,7 +4,7 @@ import java.sql.*;
 
 import com.kysonc.dto.MemberDto;
 
-//회원 DB 테이블에 접근 서비스 클래스
+//회원 DB에 접근 클래스
 public class MemberDao {
 	private static MemberDao mDao;
 	private Connection con;
@@ -27,7 +27,7 @@ public class MemberDao {
 	//DB 접근 커넥션 메소드 
 	public Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/great";
-		String id = "root", pw = "1234";
+		String id = "root", pw = "rmrqhr!58";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -110,7 +110,7 @@ public class MemberDao {
 		}
 		return -1; // 아이디부터 다르면 -1 리턴
 	}
-	
+
 	//ID에 해당되는 member DB의 데이터를 지우는 메소드
 		public String del(String id) {
 			con = this.getConnection();
@@ -128,6 +128,5 @@ public class MemberDao {
 			return null ;
 		}
 
-		
 	
 }
