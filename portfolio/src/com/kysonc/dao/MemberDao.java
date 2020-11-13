@@ -27,7 +27,7 @@ public class MemberDao {
 	//DB 접근 커넥션 메소드 
 	public Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/great";
-		String id = "root", pw = "rmrqhr!58";
+		String id = "root", pw = "1234";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -123,7 +123,7 @@ public class MemberDao {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
-				close(con, pstmt, rs);
+				this.close(con, pstmt, null);
 			}
 			return null ;
 		}

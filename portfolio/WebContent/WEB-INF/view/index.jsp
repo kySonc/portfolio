@@ -31,7 +31,7 @@
 	</c:if>
   	<c:if test="${joinResult == 1}">
 			<script>
-			alert("로그인 되었습니다.");
+			alert("회원 가입 되었습니다.");
 			</script>
 	</c:if>
   	
@@ -674,6 +674,6 @@
     
 
     <!-- ===== SCROLL REVEAL ===== -->
-    <script src="/resources/script/main.js"></script>    
+    <script src="/resources/script/index.js"></script>    
   </body>
 </html>

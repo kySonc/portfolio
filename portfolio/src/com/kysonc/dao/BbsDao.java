@@ -8,7 +8,7 @@ import com.kysonc.dto.BbsDto;
 
 
 public class BbsDao {
-	private static BbsDao bbsDao = new BbsDao(); //�ϳ��� ��ü�� ����
+	private static BbsDao bbsDao = new BbsDao(); //占싹놂옙占쏙옙 占쏙옙체占쏙옙 占쏙옙占쏙옙
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -20,15 +20,15 @@ public class BbsDao {
 	}
 	
 	
-	//BBSDAO 클래스를 사용 객체 생성 메소드
+	//BBSDAO �겢�옒�뒪瑜� �궗�슜 媛앹껜 �깮�꽦 硫붿냼�뱶
 	public static BbsDao getInstance() {
 		return bbsDao;
 	}
 	
-	//DB에 접속 컨넥션 메소드
+	//DB�뿉 �젒�냽 而⑤꽖�뀡 硫붿냼�뱶
 	public Connection getConnect() {
 		String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
-		String id = "root", pw = "rmrqhr!58";
+		String id = "root", pw = "1234";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -41,7 +41,7 @@ public class BbsDao {
 		return con;
 	}
 	
-	//JDBC 자원 닫는 메소드
+	//JDBC �옄�썝 �떕�뒗 硫붿냼�뱶
 	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		if (rs != null) {
 			try {
@@ -66,7 +66,7 @@ public class BbsDao {
 		}
 	}
 	
-	//BBSID 프라이미어 키 최대값 구하는 메소드
+	//BBSID �봽�씪�씠誘몄뼱 �궎 理쒕�媛� 援ы븯�뒗 硫붿냼�뱶
 	public int nextval() {
 		con = getConnect();
 		StringBuffer query = new StringBuffer();
@@ -86,7 +86,7 @@ public class BbsDao {
 		return result;
 	}
 	
-	//DB에 게시글 정보 저장 메소드
+	//DB�뿉 寃뚯떆湲� �젙蹂� ���옣 硫붿냼�뱶
 	public int write(BbsDto bbsDto) {
 		con = getConnect();
 		StringBuffer query = new StringBuffer();
@@ -109,7 +109,7 @@ public class BbsDao {
 		return result;
 	}
 	
-	//DB에 저장 된 모든 게시글 목록을 가져오는 메소드
+	//DB�뿉 ���옣 �맂 紐⑤뱺 寃뚯떆湲� 紐⑸줉�쓣 媛��졇�삤�뒗 硫붿냼�뱶
 	public List<BbsDto> selectList(){
 		List<BbsDto> list = new ArrayList<>();
 		
@@ -140,7 +140,7 @@ public class BbsDao {
 		return list;
 	}
 	
-	// 조회수 1증가 메소드
+	// 議고쉶�닔 1利앷� 硫붿냼�뱶
 	public int hitUpdate(String bbsId) {
 		con = getConnect();
 		String sql = "UPDATE bbs SET bbsHit = bbsHit + 1 WHERE bbsId = ?";
@@ -157,7 +157,7 @@ public class BbsDao {
 		return result;  
 	}
 	
-	//BBSID에 해당 되는 글을 DB에서 가져오는 메소드
+	//BBSID�뿉 �빐�떦 �릺�뒗 湲��쓣 DB�뿉�꽌 媛��졇�삤�뒗 硫붿냼�뱶
 	public BbsDto selectById(String bbsId) {
 		BbsDto bbsDto = new BbsDto();
 		con = getConnect();
@@ -186,7 +186,7 @@ public class BbsDao {
 		return bbsDto;
 	}
 	
-	//BBSID에 해당되는 게시글을  DB에서 지우는 메소드
+	//BBSID�뿉 �빐�떦�릺�뒗 寃뚯떆湲��쓣  DB�뿉�꽌 吏��슦�뒗 硫붿냼�뱶
 	public int del(int bbsId) {
 		con = getConnect();
 		String sql = "DELETE FROM bbs WHERE bbsId = ?";
@@ -203,7 +203,7 @@ public class BbsDao {
 		return result;
 	}
 	
-	//게시글 수정 메소드
+	//寃뚯떆湲� �닔�젙 硫붿냼�뱶
 	public int update(BbsDto bbsDto) {
 		con = getConnect();
 		StringBuffer query = new StringBuffer();
@@ -227,7 +227,7 @@ public class BbsDao {
 		return result;
 	}
 	
-	//Scalar 함수 게시글 총 개수
+	//Scalar �븿�닔 寃뚯떆湲� 珥� 媛쒖닔
 	public int getCount() {
 		int bbscount = 0;
 		con = getConnect();
@@ -235,6 +235,7 @@ public class BbsDao {
 		
 		try {
 			pstmt = con.prepareStatement(sql);
+	
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

@@ -46,7 +46,7 @@
                   <li><a href="customerDetail.jsp">관리자</a></li>                  
                 </ul>              
               </li>              
-              <li>
+              <li class="drop">
               	<c:if test="${sessionID == null }">
 					<!-- sessionID에 아이디값이 없으면 로그인 버튼 출력 -->
 					<a href="join.do" data-after="signup login"><span>회원가입</span>/<span>로그인</span></a>
@@ -54,7 +54,7 @@
 			  	<c:if test="${sessionID != null }">
 			  		<!-- sessionID에 아이디값이 있으면 로그아웃 버튼 출력 -->
 			  		<a href="logout.do"><span>로그아웃</span></a>			  					  	
-			  		<a href="memberout.do?id=${sessionID}"><span>회원 탈퇴</span></a>			  					  	
+			  		<a class="dropdown" href="memberout.do?id=${sessionID}"><span>회원 탈퇴</span></a>			  					  	
 			  	</c:if>
 			  </li>
             </ul>
