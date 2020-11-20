@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/resources/css/header.css">
     <link rel="stylesheet" href="/resources/css/top.css">    
-    <link rel="stylesheet" href="/resources/css/join.css">
-    <script src="/resources/script/validation.js"></script>    
+    <link rel="stylesheet" href="/resources/css/join.css">        
   </head>
   <body>
   	<c:if test="${ loginResult == -1 || loginResult == 0 }">
@@ -85,6 +84,9 @@
           </div>
         </div>        
     </section>
+    
+    <!-- ===== VALIDATION ===== -->
+    <script src="/resources/validation/member.js"></script>
     
     <!-- ===== JOIN JS ===== -->
     <script src="/resources/script/join.js"></script>

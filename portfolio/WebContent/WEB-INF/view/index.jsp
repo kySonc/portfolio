@@ -1,11 +1,9 @@
-<%@page import="java.sql.Timestamp"%>
-<%@page import="com.kysonc.dto.BbsDto"%>
-<%@page import="java.util.List"%>
-<%@page import="com.kysonc.dao.BbsDao"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -21,7 +19,26 @@
     <link rel="stylesheet" href="/resources/css/lightslider.css" />
     <link rel="stylesheet" href="/resources/css/services.css">
     <link rel="stylesheet" href="/resources/css/contact.css">
-    <link rel="stylesheet" href="/resources/css/notice.css">    
+    <link rel="stylesheet" href="/resources/css/notice.css">
+    <link rel="stylesheet" href="/resources/css/search.css">
+    
+     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".default_option").click(function(){
+                $(".dropdown ul").toggleClass("active");
+            });
+
+            $(".dropdown ul li").click(function(){
+                var text = $(this).text();
+                $(".default_option").text(text)
+                $(".dropdown ul").toggleClass("active");
+            })
+        });
+    </script>    
+    
   </head>
   <body>
   	<c:if test="${loginResult == 1}">
@@ -41,7 +58,7 @@
     <!-- ===== MAIN ===== -->      
     <section id="hero">
         <div class="hero container">
-          <div>
+          <div class="portftitle">
             <h1>Welcome<span></span></h1>
             <h1>to<span></span></h1>
             <h1>Dream Tire<span></span></h1>
@@ -481,29 +498,57 @@
           <div class="noticeInfo">
             <div class="box">
               <div class="text">
-                <h3><a href="#">공지 사항</a></h3>                
+                <h3><a href="index.do#notice">공지 사항</a></h3>                
               </div>
             </div>          
             <div class="box">
               <div class="text">
-                <h3><a href="#">1 : 1 고객 상담</a></h3>                
+                <h3><a href="index.do#contact">1 : 1 고객 상담</a></h3>                
               </div>
             </div>         
             <div class="box">
               <div class="text">
-                <h3><a href="#">관리자</a></h3>                
+                <h3><a href="index.do#admin">관리자</a></h3>                
               </div>
             </div>
           </div>
           
-        <%-- 모든 데이터가 저장된 list 가져오기 --%>
-		<%
-			BbsDao bbsDao = BbsDao.getInstance();
-			List<BbsDto> list = bbsDao.selectList();
-			
-		%>
+     
           <div class="noticelist">
-            <table>
+        <form action="bbs.do#notice">
+       <!-- <fieldset>
+          			<legend>게시글 검색</legend>
+          			<label>검색분류</label>
+          			<select name="f">
+				  			<option ${(param.f=="bbsTitle")?"selected":""} value="bbsTitle">제목</option>
+							<option ${(param.f=="id")?"selected":""} value="id">작성자</option>
+					</select>
+					<label>검색어</label>
+					<input type="text" name="q" value="${param.q}" />
+					<input type="submit" value="검색" />			    					 	
+			</fieldset> -->
+					
+			    
+			    <div class="wrapper">
+        			<div class="search_box">
+            			<div class="dropdown">
+                			<div class="default_option">All</div>
+                			<ul>
+                    			<li><input type="hidden"><label>All</label></li>
+                    			<li><input type="radio" name="f" value="bbsTitle" id="bbsTitle"><label for="bbsTitle">제목</label></li>
+                    			<li><input type="radio" name="f" value="id" id="id"><label for="id">작성자</label></li>
+                			</ul>
+            			</div>
+            			<div class="search_field">
+                			<input type="text" class="input" name="q" value="${param.q}" placeholder="Search">
+                			<input type="submit" value="&#xf002;" class="fas fa-search" />
+                		</div>
+                	</div>
+                </div>
+				
+			</form>
+				  
+            <table>			  	            
               <tr>
                   <th>번호</th>
                   <th>제목</th>
@@ -512,39 +557,31 @@
                   <th>작성일</th>
                   <th>조회</th>
               </tr>
-		<%
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd, hh:mm:ss");
-			int count = 0;
-			for (BbsDto b : list) {
-				String stDate = "";
-				Timestamp tDate = b.getBbsDate();
-				
-				if (tDate != null) {
-					stDate = sdf.format(tDate);
-				}				
-		%>    
-		        
+		
+		     
+	<%-- <%			
+			List<BbsDto> list = (List<BbsDto>)request.getAttribute("list");
+			for(BbsDto n : list){
+				pageContext.setAttribute("n", n);			
+		 %> --%>
+			<!-- 5개의 게시글 표현 인덱스 begin="0" 부터 end="4" 까지 -->	
+			<c:forEach var="n" items="${list}" begin="0" end="4" >
               <tr>
-                  <td data-th="번호"><%=b.getBbsId() %></td>                
-                  <td data-th="제목" class="letter"><b><a href="bbsview.do?bbsId=<%=b.getBbsId() %> "><p><%=b.getBbsTitle() %></P></a></b></td>
-                  <td data-th="내용" class="letter"><p><%=b.getBbsContent() %></p></td>
-                  <td data-th="작성자"><%=b.getId() %></td>
-                  <td data-th="작성일"><%=stDate %></td>
-                  <td data-th="조회"><%=b.getBbsHit() %></td>
-              </tr>
-        <%
-				
-			count++;
-			}
-			if (count == 0) {
-		%>
-				<tr><td colspan="7">작성한 게시글이 없습니다.</td></tr>		
-		<%
-			}
-			System.out.println("현재 게시글 " + count + "개");
-		%>                    
+                  <td data-th="번호">${n.bbsId}</td>                
+                  <td data-th="제목" class="letter"><b><a href="bbsview.do?bbsId=${n.bbsId} "><p>${n.bbsTitle}</P></a></b></td>
+                  <td data-th="내용" class="letter"><p>${n.bbsContent}</p></td>
+                  <td data-th="작성자">${n.id}</td>
+                  <td data-th="작성일"><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${n.bbsDate}" /></td>
+                  <td data-th="조회"><fmt:formatNumber value="${n.bbsHit}"/></td>
+              </tr>              
+            </c:forEach>
+            
+			<c:if test="${empty list}">
+   				<tr><td colspan="7">현재 해당 게시글은 존재하지 않습니다.</td></tr>
+			</c:if>
+    	
             </table>
-            <div class="paging">
+           <!--  <div class="paging">
               <a href="#" class="fa fa-angle-double-left"></a>
               <a href="#" class="fa fa-angle-left"></a>
               <a href="#" class="num active">1</a>
@@ -552,6 +589,50 @@
               <a href="#" class="num">3</a>
               <a href="#" class="fa fa-angle-right"></a>
               <a href="#" class="fa fa-angle-double-right"></a>
+            </div>  -->
+            
+            
+            <!-- ===== 페이지처리 ===== -->
+            
+            <!-- 시작번호 구하기 파라미터 값이 없으면 1 있으면 파라미터 값을 페이지에 담는다 -->
+            <c:set var="page" value="${(empty param.p)?1:param.p }" />
+            
+            <!-- 시작 번호 -->
+            <c:set var="startNum" value="${page-(page-1)%5}" />
+            
+            
+            <!-- 마지막 번호 설정 -->
+            <c:set var="lastNum" value="${fn:substringBefore(Math.ceil(searchCount/5), '.')}" />
+                        
+            <div style="margin-top:10px; font-size: 1.2rem;"><span style="color: red;">${(param.p==null)?1:param.p }</span> / ${lastNum} pages</div>
+            
+            <div class="paging">
+                       
+            <!-- 이전 페이지 표시 둘중 하나는 보이지 않는다-->
+            <c:if test="${startNum>1}">
+            	<a href="?p=${startNum-1}&f=${param.f}&q=${param.q}#notice" class="fa fa-angle-left" ></a>
+            </c:if>
+            <c:if test="${startNum<=1}">
+            	<a class="fa fa-angle-left" onclick="alert('이전 페이지가 없습니다')"></a>
+            </c:if>
+            	
+            
+            <!-- 페이지 번호 5까지 만들기 -->	
+            <c:forEach var="i" begin="0" end="4" >
+            	
+            <c:if test="${(startNum+i) <= lastNum }" >
+           		<a href="?p=${startNum+i}&f=${param.f}&q=${param.q}#notice" class="num ${(page==(startNum+i))?'active':'' }">${startNum+i}</a>
+           	</c:if>	
+            </c:forEach>
+            
+            <!-- 다음 페이지 표시 둘중 하나는 보이지 않는다 -->
+            <c:if test="${startNum+4<lastNum}">
+              	<a href="?p=${startNum+5}&f=${param.f}&q=${param.q}#notice" class="fa fa-angle-right" ></a>
+            </c:if>
+            <c:if test="${startNum+4>=lastNum}">
+              	<a class="fa fa-angle-right" onclick="alert('다음 페이지가 없습니다')"></a>
+            </c:if>
+              
             </div>
           </div>
         </article>
@@ -562,7 +643,7 @@
     <section id="contact" >
       <div class="contact container">     
         <div class="contact-title">
-          <h2>Contact Us</h2>
+          <h2>Contact <span>U</span>s</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             officia, quod id nesciunt ea ipsa eaque minima praesentium ducimus
@@ -604,7 +685,7 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="id" required="required" />
                     <span class="text">Name</span>
                     <span class="line"></span>
                   </div>
@@ -614,7 +695,7 @@
                     <input type="text" name="bbsTitle" required="required" />
                     <span class="text">Title</span>
                     <span class="line"></span>
-                  </div>
+                  </div>s
                 </div>
               </div>
               <div class="row100">
@@ -659,6 +740,7 @@
     
     
     <!-- ===== PORTFOLIO ===== -->
+    
         
     <!-- ===== FOOTER =====-->     
     <%@ include file="footer.jsp" %>    
@@ -670,10 +752,6 @@
     <!-- ===== PRODUCT SLIDER =====-->
     <script type="text/javascript" src="/resources/script/lightslider.js"></script>
     <script type="text/javascript" src="/resources/script/productslider.js"></script>
-    
-    
-
-    <!-- ===== SCROLL REVEAL ===== -->
-    <script src="/resources/script/index.js"></script>    
+        
   </body>
 </html>

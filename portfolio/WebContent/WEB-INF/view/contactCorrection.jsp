@@ -99,14 +99,22 @@
                     <span class="line"></span>
                   </div>
                 </div>
-              </div>               
+              </div>
+              
+              <jsp:useBean id="bbsviews" class="com.kysonc.dto.MemberDto" scope="request" />
+              <jsp:setProperty name="bbsviews" property="id" param="bbsId"/>
+              
+              <!--  <%out.println(bbsviews.getId()); %> -->
+                            
+              <div class="smallpage"><span>Number.</span><span style="color: red; padding-left: 5px;"> <jsp:getProperty name="bbsviews" property="id"/></span></div>
+                                         
 		      <div class="row100">
-				<div class="col">
-					<input type="submit" value="수정" />                	
-                </div>
-              	<div class="col">
-              		<input type="button" onClick="location.href='bbsdelete.do?bbsId=${bbsview.bbsId}#notice'" value="삭제" />              	
-              	</div>
+		      	<div class="col">
+		      		<input type="button" onClick="location.href='bbsview.do?#notice'" value="돌아기기" />
+					<input type="submit" value="등록" />    	
+                	<input type="reset" value="다시쓰기" />
+              		<input type="button" onClick="location.href='bbsdelete.do?bbsId=<jsp:getProperty name="bbsviews" property="id"/>#notice'" value="삭제" />              	
+              	</div>				           	
               </div>		      
               <div style="display: none;" >
 				<input type="text" name="bbsId" value="${bbsupdate.bbsId }" />

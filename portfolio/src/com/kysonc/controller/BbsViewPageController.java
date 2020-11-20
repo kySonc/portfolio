@@ -12,8 +12,8 @@ import com.kysonc.dto.BbsDto;
 
 
 // Title 클릭 작성글 내용 보기 처리 클래스
-@WebServlet("/bbsview.do")
-public class BbsViewController extends HttpServlet {
+@WebServlet("/bbsviewPage.do")
+public class BbsViewPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -27,17 +27,15 @@ public class BbsViewController extends HttpServlet {
 	}
 
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String bbsId = req.getParameter("bbsId");		
-		
+		String bbsId = req.getParameter("bbsId");
 		BbsService service = new BbsService(); //service 객체 생성
 		BbsDao bbsDao = BbsDao.getInstance();
 		BbsDto bbsDto = new BbsDto();
 		bbsDao.hitUpdate(bbsId); //해당 게시글 조회수 +1 늘리고 저장
-		bbsDto = service.getBbsPrevList(bbsId); //해당 bbsId의 시작 이전 bbsId 순번 구하기			
+				
+		bbsDto = service.getBbsNextList(bbsId); //해당 bbsId의 시작 다음 bbsId 순번 구하기
 		req.setAttribute("bbsview", bbsDto);
-				
-				
-						
+													
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/contactView.jsp"); //BBSVIEW를 가지고 contactView.jsp(작성글 내용 보기) 이동
 		rd.forward(req, resp);
 	}

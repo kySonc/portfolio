@@ -8,7 +8,7 @@ import com.kysonc.dto.BbsDto;
 
 
 public class BbsDao {
-	private static BbsDao bbsDao = new BbsDao(); //�ϳ��� ��ü�� ����
+	private static BbsDao bbsDao = new BbsDao(); 
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -26,7 +26,7 @@ public class BbsDao {
 	//DB에 접속 컨넥션 메소드
 	public Connection getConnect() {
 		String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
-		String id = "root", pw = "rmrqhr!58";
+		String id = "root", pw = "1234";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -84,13 +84,35 @@ public class BbsDao {
 		return result;
 	}
 	
-	//DB에 게시글 정보 저장 메소드
+		
+	//BBSID 프라이미어 키 최소값 구하는 메소드
+	public int prevval() {
+		con = getConnect();
+		StringBuffer query = new StringBuffer();
+		query.append("SELECT MIN(bbsId) ").append("FROM bbs");
+		
+		try {
+			pstmt = con.prepareStatement(query.toString());
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				result = rs.getInt("MIN(bbsId)");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(con, pstmt, rs);
+		}
+		return result;
+	}
+	
+	//DB에 게시글 등록 정보 저장 메소드
 	public int write(BbsDto bbsDto) {
 		con = getConnect();
 		StringBuffer query = new StringBuffer();
 		query.append("INSERT INTO bbs ");
 		query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, bbsCategory, id) ");
 		query.append("VALUES (?, ?, ?, now(), 0, ?, ?)");
+		
 		try {
 			pstmt = con.prepareStatement(query.toString());
 			pstmt.setInt(1, bbsDto.getBbsId());
@@ -107,36 +129,36 @@ public class BbsDao {
 		return result;
 	}
 	
-	//DB에 저장 된 모든 게시글 목록을 가져오는 메소드
-	public List<BbsDto> selectList(){
-		List<BbsDto> list = new ArrayList<>();
-		
-		try {
+	//DB에 저장 된 모든 게시글을 내림차순 목록으로 가져오는 메소드
+		public List<BbsDto> selectList(){
+			List<BbsDto> list = new ArrayList<>();
 			con = getConnect();
 			String sql ="SELECT * FROM bbs ORDER BY bbsId DESC";
-			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			
-			
-			while (rs.next()) {
-				BbsDto bbsDto = new BbsDto();
-				bbsDto.setBbsId(rs.getInt("bbsId"));
-				bbsDto.setBbsTitle(rs.getString("bbsTitle"));
-				bbsDto.setBbsContent(rs.getString("bbsContent"));
-				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
-				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
-				bbsDto.setId(rs.getString("id"));
-				list.add(bbsDto); 
+			try {				
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				
+				while (rs.next()) {
+					BbsDto bbsDto = new BbsDto();
+					bbsDto.setBbsId(rs.getInt("bbsId"));
+					bbsDto.setBbsTitle(rs.getString("bbsTitle"));
+					bbsDto.setBbsContent(rs.getString("bbsContent"));
+					bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
+					bbsDto.setBbsHit(rs.getInt("bbsHit"));
+					bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+					bbsDto.setId(rs.getString("id"));
+					list.add(bbsDto); 
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close(con, pstmt, rs);
 			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(con, pstmt, rs);
+			return list;
 		}
-		return list;
-	}
 	
 	// 조회수 1증가 메소드
 	public int hitUpdate(String bbsId) {
@@ -155,13 +177,14 @@ public class BbsDao {
 		return result;  
 	}
 	
-	//BBSID에 해당 되는 글을 DB에서 가져오는 메소드
+	//BBSID(순번)에 해당 되는 글을 DB에서 가져오는 메소드
 	public BbsDto selectById(String bbsId) {
 		BbsDto bbsDto = new BbsDto();
-		con = getConnect();
+		
 		String sql = "SELECT * FROM bbs WHERE bbsId = ?";
 		
 		try {
+			con = getConnect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bbsId);
 			rs = pstmt.executeQuery();

@@ -43,6 +43,7 @@ public class BbsUpdateController extends HttpServlet {
 		
 		bbsDao.update(bbsDto);
 		resp.sendRedirect("bbs.do#notice");
+		
 	}
 	
 }

@@ -109,9 +109,10 @@ article {
   color: black;
 }
 #notice .noticelist .paging a.active {
-  background-color: rgba(107, 5, 5, 0.2);
+  /*background-color: rgba(107, 5, 5, 0.2);*/
+  background-color: var(--contact-background-color);
   border: 1px solid var(--text-animation-color);
-  color: var(--text-animation-color);
+  color: var(--main-color);
 }
 #notice .noticelist .paging a:hover:not(.active) {
   background-color: #ddd;

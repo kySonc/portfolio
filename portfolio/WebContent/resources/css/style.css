@@ -108,7 +108,7 @@ a {
   width: fit-content; /*text 반응형을 위한 처리 */
   position: relative;
   font-weight: 500;
-  font-size: var(--main-h1-font);
+  font-size: var(--main-h1-font);  
   /*color: var(--text-color);*/
   color: transparent; /* animation 적용 글자색상을 없앤다 */
   animation: text_reveal 0.5s ease forwards; /*kewframe에 의해 설정된 계산 된 값을 유지*/
@@ -498,7 +498,19 @@ a {
     flex-direction: column;
     justify-content: center;
   }
+  
+  #hero .portftitle {
+  font-size: 4rem;
+  text-align: center;  
+  }
+  
+  #hero h1 {
+  font-size: 5rem;
+  margin: 0 auto;
+  }
+  
   #hero .tire-Search h2 {
     margin-top: 85px;
   }
+  
 }

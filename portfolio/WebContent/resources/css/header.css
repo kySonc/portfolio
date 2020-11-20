@@ -177,7 +177,7 @@ a {
   color: rgba(240, 248, 255, 0.021);
   font-size: var(--view-hover-font);
   letter-spacing: 50px;
-  z-index: 1;
+  z-index: -1;
   transition: 0.3s ease letter-spacing;
 }
 

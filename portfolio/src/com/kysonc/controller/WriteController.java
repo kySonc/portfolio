@@ -1,10 +1,6 @@
 package com.kysonc.controller;
 
 import java.io.IOException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +42,7 @@ public class WriteController extends HttpServlet {
 
 		int wResult = bbsDao.write(bbsDto); //bbsDto에 저장된 값을 DB에 삽입 결과값 저장
 		System.out.println(wResult);
-		resp.sendRedirect("bbs.do#notice"); //BbsController로 이동 후 게시판 목록으로 이동
+		resp.sendRedirect("index.do#notice"); //BbsController로 이동 후 게시판 목록으로 이동
 	}
 	
 }

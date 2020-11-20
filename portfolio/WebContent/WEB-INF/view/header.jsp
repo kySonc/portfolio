@@ -43,7 +43,7 @@
                 <ul class="dropdown">
                   <li><a href="index.do#notice">공지 사항</a></li>
                   <li><a href="index.do#contact">1:1 고객상담</a></li>
-                  <li><a href="customerDetail.jsp">관리자</a></li>                  
+                  <li><a href="index.do#admin">관리자</a></li>                  
                 </ul>              
               </li>              
               <li class="drop">
@@ -53,7 +53,7 @@
 			  	</c:if>
 			  	<c:if test="${sessionID != null }">
 			  		<!-- sessionID에 아이디값이 있으면 로그아웃 버튼 출력 -->
-			  		<a href="logout.do"><span>로그아웃</span></a>			  					  	
+			  		<a href="logout.do" data-after="logout"><span>로그아웃</span></a>			  					  	
 			  		<a class="dropdown" href="memberout.do?id=${sessionID}"><span>회원 탈퇴</span></a>			  					  	
 			  	</c:if>
 			  </li>
