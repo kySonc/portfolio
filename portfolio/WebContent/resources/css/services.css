@@ -42,7 +42,14 @@
   overflow: hidden;
   background-size: cover;
   z-index: 1;
-  background-image: url(../images/s1.jpg);
+  background-image: url(../images/s1.jpg);  
+}
+#services .service-item1 img {
+  transition: 0.3s ease transform;
+}
+#services .service-item1:hover .service-icon img {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 #services .service-item2 {
   flex-basis: 80%; /* 항목의 크기 */
@@ -59,6 +66,13 @@
   z-index: 1;
   overflow: hidden;
 }
+#services .service-item2 img {
+  transition: 0.3s ease transform;
+}
+#services .service-item2:hover .service-icon img {
+  transform: scale(1.5);
+  cursor: pointer;
+}
 #services .service-item3 {
   flex-basis: 80%; /* 항목의 크기 */
   display: flex;
@@ -73,6 +87,13 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+}
+#services .service-item3 img {
+  transition: 0.3s ease transform;
+}
+#services .service-item3:hover .service-icon img {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 #services .service-item4 {
   flex-basis: 80%; /* 항목의 크기 */
@@ -89,6 +110,13 @@
   z-index: 1;
   overflow: hidden;
 }
+#services .service-item4 img {
+  transition: 0.3s ease transform;
+}
+#services .service-item4:hover .service-icon img {
+  transform: scale(1.5);
+  cursor: pointer;
+}
 #services .service-item1:after {
   content: "";
   position: absolute;
@@ -98,7 +126,7 @@
   width: 100%;
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   opacity: 0.7;
-  z-index: -1;
+  z-index: -1;  
 }
 #services .service-item2:after {
   content: "";

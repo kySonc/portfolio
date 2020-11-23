@@ -2,7 +2,7 @@ package com.kysonc.dto;
 
 //회원 데이터 정보 저장 클래스
 public class MemberDto {
-	private String id, pw, name, email;
+	private String id, pw, name;
 	
 	public String getId() {
 		return id;
@@ -28,12 +28,5 @@ public class MemberDto {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
 }

@@ -29,19 +29,24 @@ public class BbsUpdateController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 				
-		String bbsId = req.getParameter("bbsId");
-		String bbsCategory = req.getParameter("bbsCategory");
+		String bbsId = req.getParameter("bbsId");		
 		String bbsTitle = req.getParameter("bbsTitle");
 		String bbsContent = req.getParameter("bbsContent");
+		String bbsName = req.getParameter("bbsName");
+		String bbsEmail = req.getParameter("bbsEmail");
+		String bbsPhone = req.getParameter("bbsPhone");
 		
 		BbsDao bbsDao = BbsDao.getInstance();
 		BbsDto bbsDto = new BbsDto();
-		bbsDto.setBbsId(Integer.parseInt(bbsId));
-		bbsDto.setBbsCategory(bbsCategory);
+		bbsDto.setBbsId(Integer.parseInt(bbsId));		
 		bbsDto.setBbsTitle(bbsTitle);
 		bbsDto.setBbsContent(bbsContent);
-		
-		bbsDao.update(bbsDto);
+		bbsDto.setBbsName(bbsName);
+		bbsDto.setBbsEmail(bbsEmail);
+		bbsDto.setBbsPhone(bbsPhone);
+		 
+		int result = bbsDao.update(bbsDto);
+		System.out.println("게시글 수정 :" + result);
 		resp.sendRedirect("bbs.do#notice");
 		
 	}

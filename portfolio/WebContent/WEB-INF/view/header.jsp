@@ -62,14 +62,7 @@
         </div>
       </div>
       <span id="Back2Top">&#8593;</span>
-    </header>       
-      
-    <!-- ===== ABOUT ===== -->
-    <!-- ===== SKILLS ===== -->
-    <!-- ===== PORTFOLIO ===== -->
-    <!-- ===== CONTACT ===== -->
-    <!-- ===== FOOTER =====-->    
-    <!-- ===== SCROLL REVEAL ===== -->
+    </header>    
     
     <!-- ===== MAIN JS ===== -->
     <script src="/resources/script/index.js"></script>

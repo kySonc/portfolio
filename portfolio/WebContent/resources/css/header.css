@@ -62,8 +62,8 @@ ul {
   list-style: none;
 }
 a {
-  text-decoration: none; /* 諛묒쨪 吏��슦湲� */
-  color: inherit; /*遺�紐⑥쓽 而щ윭�긽�냽*/
+  text-decoration: none; /*기본값 밑줄이 없는 보통 글자*/
+  color: inherit; /*부모 색상 상속*/
 }
 
 /*===== LAYOUT =====*/
@@ -81,22 +81,22 @@ a {
 #hero {
   background-image: url(../images/j1.jpg);
   background-repeat: no-repeat;
-  background-size: cover; /*媛�濡� �꽭濡� 鍮꾩쑉 �쑀吏� */
-  background-position: top center; /*�쐞移� 議곗젙  �긽�떒 媛��슫�뜲*/
-  position: relative; /*�쐞移� 議곗젙 */
-  z-index: 1; /* �떎瑜� �슂�냼蹂대떎 �넂寃� */
+  background-size: cover; /*이미지 가득 채우기*/
+  background-position: top center; /*배경 이미지 위치 지정*/
+  position: relative; /*relative, absolute, fixed 기준 */
+  z-index: 1; 
 }
 /* img �닾紐낅룄 泥섎━ */
 #hero:after {
   content: "";
-  position: absolute; /* 媛��옣 媛�源뚯슫 �쐞移� 吏��젙 議곗긽 �슂�냼�뿉 ���빐 �긽���쟻�쑝濡� 諛곗튂 */
+  position: absolute; 
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
   background-color: var(--black-color);
-  opacity: 0.7; /* �닾紐낅룄 0.0~1.0 */
-  z-index: -1; /* 湲곕낯 �슂�냼�쓽 �쐞移섎낫�떎 �븘�옒濡� �븳�떎 */
+  opacity: 0.7; /*요소의 투명도 조절*/
+  z-index: -1; 
 }
 
 /*===== Header =====*/
@@ -113,17 +113,17 @@ a {
 
 /*nav layout*/
 #header {
-  position: fixed; /*怨좎젙�맂 �쐞移� �꽕�젙 �긽�쐞�슂�냼�뿉 �쁺�뼢�쓣 諛쏆� �븡�뒗�떎*/
+  position: fixed; /*브라우저 화면의 상대 위치 고정된 위치*/
   z-index: 1000;
   left: 0;
   top: 0;
-  width: 100vw; /* view port �꼫鍮� */
+  width: 100vw; /* view port 화면 전체 스크롤 생김 */
   height: auto;
 }
 #header .header {
-  min-height: 8vh; /* �슂�냼�쓽 理쒖냼�넂�씠 */
-  background-color: var(--header-color); /*nav-bar �닾紐낅룄 */  
-  transition: 0.3s ease background-color; /*scroll nav-bar*/  
+  min-height: 8vh; /* 8vh 보다 작아지는것을 방지 */
+  background-color: var(--header-color); /*NAV-BAR*/  
+  transition: 0.3s ease background-color; /*scroll NAV-BAR*/  
   border-style: none;
 }
 #header .nav-bar {
@@ -131,7 +131,7 @@ a {
   align-items: center;
   width: 100%;
   height: 100%;
-  justify-content: space-between; /* �슂�냼 �뼇�걹�쑝濡� 諛곗튂*/
+  justify-content: space-between; /*요소들 사이 여유 공간 배치*/
   max-width: 1294px;
   padding: 0 10px;
 }
@@ -141,20 +141,20 @@ a {
   background-color: var(--view-color);
   width: 100vw;
   height: 100vh;
-  left: 100%; /* hamburger view �닲源� */
-  /*left: 0;*/ /* hamburger view �닲源� */
+  left: 100%; /*hamburger view 채움*/
+  /*left: 0;*/ /*hamburger view 숨김*/
   top: 0;
-  display: flex; /* flex 濡� 諛붽씀怨� �쁿�쑝濡� �굹�뿴*/
-  justify-content: center; /* a �깭洹� 以묒븰諛곗튂 */
+  display: flex; 
+  justify-content: center; /*가운데 정렬*/
   align-items: center;
-  flex-direction: column; /* a �깭洹� �꽭濡쒖젙�뿴 */
+  flex-direction: column; /*세로 정렬*/
   z-index: -1;
   /*overflow: hidden;*/
   transition: 0.7s ease left;
 }
 /*hamburger view active */
 #header .nav-list ul.active {
-  left: 0; /* hamburger view 蹂댁엫 */
+  left: 0; /* hamburger view */
 }
 
 #header .nav-list ul a {
@@ -169,7 +169,7 @@ a {
 }
 /* view text shadow */
 #header .nav-list ul a::after {
-  content: attr(data-after); /* dataset媛앹껜(attr)瑜� �넻�빐 ���옣�맂 �냽�꽦 媛��졇�삤湲� */
+  content: attr(data-after); /*nav 드랍 테이터 불러오기*/
   position: absolute;
   top: 50%;
   left: 50%;
@@ -192,14 +192,14 @@ a {
   width: 60px;
   display: inline-block;
   border: 3px solid var(--main-color);
-  border-radius: 50%; /* �썝�삎 留뚮뱾湲� */
+  border-radius: 50%; /*네모 -> 원 만들기*/
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 500;
-  transform: scale(0.7); /* hamburger 異뺤냼 */
+  transform: scale(0.7); /* hamburger 원 크기*/
   margin-right: 20px;
 }
 /*hamburger animation*/
@@ -210,7 +210,7 @@ a {
   width: 100%;
   border-radius: 50%;
   border: 3px solid white;
-  animation: hamburger_plus 1s ease infinite; /*keyframes �씠由� 臾댁젣�븳 */
+  animation: hamburger_plus 1s ease infinite; /*keyframes 네임 hamburger_plus 1초 처음과 끝 무한대*/
 }
 /*hamburger keyframes*/
 @keyframes hamburger_plus {
@@ -242,20 +242,20 @@ a {
   transition: 0.3s ease;
   transition-property: top, bottom; /* top, bottom �듃�옖吏��뀡 �쟻�슜*/
 }
-/* �븯�떒 �옉��湲� */
+/*작대기 만들기*/
 #header .hamburger .bar::after {
   top: 8px;
 }
-/* �긽�떒 �옉��湲� */
+/*작대기 만들기*/
 #header .hamburger .bar::before {
   bottom: 8px;
 }
 /* hamburger click .active */
 #header .hamburger.active .bar::before {
-  bottom: 0; /*�긽�떒 �옉��湲� �궗�씪吏�*/
+  bottom: 0; /*작대기 사라짐*/
 }
 #header .hamburger.active .bar::after {
-  top: 0; /*�븯�떒 �옉��湲� �궗�씪吏�*/
+  top: 0; 
 }
 
 /*dorpdown nav*/
@@ -270,17 +270,17 @@ a {
   flex-direction: column;
   background-color: var(--drop-color);
   transition: 0.7s ease;
-  left: inherit; /*遺�紐⑥긽�냽 諛쏆븘 �쐞移� �씠�룞 */
-  top: -250px; /* �쐞濡� �쐞移� �씠�룞 �솕硫� 諛� */
-  z-index: -10; /*menu bar 蹂대떎 �븘�옒�꽌 �씠�룞*/
-  visibility: hidden; /*�닲源�(�옄�떊�쓽 �쁺�뿭�� 怨꾩냽 李⑥�) */
+  left: inherit; 
+  top: -250px; /*화면 밖 위로 올림*/
+  z-index: -10; /*menu bar보다 아래로*/
+  visibility: hidden; /*숨긺*/
   border-style: none;
   padding-top: 10px;
   width: auto;
 }
 #header .nav-list ul .drop:hover .dropdown {
-  visibility: visible; /*諛뺤뒪媛� 蹂댁뿬吏�*/
-  top: 80%; /*�쐞�뿉�꽌 �븘�옒濡� �궡�젮�샂 */
+  visibility: visible; /*보임*/
+  top: 80%; /*위에서 80% 내려옴*/
   transition: 1s ease;
 }
 #header .nav-list .dropdown .drop2 {
@@ -295,12 +295,12 @@ a {
   transition: 0.7s ease;
   top: -400px;
   left: 400px;
-  visibility: hidden; /*�닲源�(�옄�떊�쓽 �쁺�뿭�� 怨꾩냽 李⑥�) */
+  visibility: hidden;
 }
 
 #header .nav-list ul .drop2:hover .dropdown2 {
   position: absolute;
-  visibility: visible; /*諛뺤뒪媛� 蹂댁뿬吏�*/
+  visibility: visible;
   transition: 0.7s ease;
   margin: 0px;
   padding: 0px;
@@ -332,10 +332,10 @@ a {
     display: none;
   }
   #header .nav-bar {
-    z-index: 0; /*dropdown 嫄몃┝諛⑹� */
+    z-index: 0;
   }
   #header .nav-list ul {
-    position: initial; /* 泥섏쓬 媛믨낵 �룞�씪 */
+    position: initial;
     display: flex;
     flex-direction: row;
     height: auto;

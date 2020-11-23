@@ -56,7 +56,7 @@
               </div>
               <div class="text">
                 <h3>Email</h3>
-                <p>rmrqhrrl@gmail.com</p>
+                <p>dlswhsqhr@gmail.com</p>
               </div>
             </div>
           </div>
@@ -65,34 +65,34 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" required="required" disabled />
-                    <span class="text">ID : ${bbsview.id }</span>
-                    <span class="line"></span>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="inputBox">
-                    <input type="text" value="${bbsview.bbsTitle }" onfocus="this.blur()" />
+                  	<input type="text" value="${bbsview.bbsTitle }" onfocus="this.blur()" />
                     <span class="text">Title</span>
-                    <span class="line"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="row100">
-                <div class="col">
-                  <div class="inputBox">
-                    <input type="text" value="Email : ${bbsview.bbsId }" onfocus="this.blur()" />
-                    <span class="text"></span>
-                    <span class="line"></span>
+                    <span class="line"></span>                  	
                   </div>
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" disabled/>
-                    <span class="text">작성일 : <fmt:formatDate pattern="yyyy-MM-dd" value="${bbsview.bbsDate}" /></span>
-                    <span class="line"></span>
-                  </div>
+                  	<input type="text" value="${bbsview.bbsName }" onfocus="this.blur()"/>
+                    <span class="text">Name</span>
+                    <span class="line"></span>                    
+                  </div>                  
                 </div>
+              </div>  
+              <div class="row100">  
+                <div class="col">
+                  <div class="inputBox">
+                  	<input type="text" disabled/>
+                    <span class="text">작성일 : <fmt:formatDate pattern="yyyy-MM-dd" value="${bbsview.bbsDate}" /></span>                  	
+                    <span class="line"></span>                     	
+                  </div>                  
+                </div>             
+                <div class="col">
+                  <div class="inputBox">
+                  	<input type="text" disabled />
+                  	<span class="text">ID : ${bbsview.id }</span>                    
+                    <span class="line"></span>                  	                 
+                  </div>
+                </div>                
               </div>
               <div class="row100">
                 <div class="col">
@@ -105,10 +105,6 @@
               </div>
               
             <!-- ===== 페이지처리 ===== -->
-
-            
-            
-
 <%
 	BbsDao bbsDao = BbsDao.getInstance();   
     int nextval = bbsDao.nextval();
@@ -153,11 +149,11 @@
             		<c:if test="${startNum < lastNum}">
             			<input type="button" onClick="location.href='bbsviewPage.do?bbsId=${startNum+1}'" value="다음" />              	
             		</c:if>
-            		
+            <!-- 수정 삭제 버튼  -->            		
             		<c:choose>
 						<c:when test="${bbsview.id == sessionID || sessionID == 'admin' }">		      
 							<input type="button" onClick="location.href='bbsupdate.do?bbsId=${bbsview.bbsId}'" value="수정" />                	
-                       		<input type="button" onClick="location.href='bbsdelete.do?bbsId=${bbsview.bbsId}'" value="삭제" />
+                       <!-- <input type="button" onClick="location.href='bbsdelete.do?bbsId=${bbsview.bbsId}'" value="삭제" />  -->
                			</c:when>
 		  			</c:choose>    
                         

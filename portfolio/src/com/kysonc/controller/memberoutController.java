@@ -28,12 +28,15 @@ public class memberoutController extends HttpServlet {
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		String id= (String)session.getAttribute("sessionID");
+		System.out.println("회원 탈퇴 sessionID: " + id);
 		
 		MemberDao memberDao = MemberDao.getInstance();
 		String result = memberDao.del(id); //DB에 저장된 정보 삭제
 		
 		if(result == null) {
+			System.out.println("회원 탈퇴 성공:"+ session);
 			session.invalidate(); //저장된 세션을 삭제한다
+			
 		}
 
 		resp.sendRedirect("index.do"); // 홈 페이지 이동

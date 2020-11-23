@@ -53,7 +53,7 @@
               </div>
               <div class="text">
                 <h3>Email</h3>
-                <p>rkkr7d3421@temporary-mail.net</p>
+                <p>dlswhsqhr@gmail.com</p>
               </div>
             </div>
           </div>
@@ -62,34 +62,34 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
-                    <span class="text">name : ${bbsupdate.id }</span>
-                    <span class="line"></span>
+                  	<input type="text" name="bbsTitle" value="${bbsupdate.bbsTitle }" required="required"/>
+                    <span class="text">Title</span>
+                    <span class="line"></span>                    
                   </div>
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="bbsTitle" value="${bbsupdate.bbsTitle }" required="required"/>
-                    <span class="text">Title</span>
-                    <span class="line"></span>
+                  	<input type="text" name="bbsName" value="${bbsupdate.bbsName }" required="required" />
+                    <span class="text">Name</span>
+                    <span class="line"></span>                    
                   </div>
                 </div>
               </div>
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" value="kysonc@gmail.com" required="required"/>
+                  	<input type="text" name="bbsEmail" value="${bbsupdate.bbsEmail }" required="required"/>
                     <span class="text">Email</span>
-                    <span class="line"></span>
+                    <span class="line"></span>                    
                   </div>
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
-                    <span class="text">조회수 : ${bbsview.bbsHit }</span>
-                    <span class="line"></span>
+                  	<input type="text" name="bbsPhone" value="${bbsupdate.bbsPhone }" required="required" />
+                  	<span class="text">Phone</span>
+                    <span class="line"></span>                    
                   </div>
-                </div>
+                </div>                
               </div>
               <div class="row100">
                 <div class="col">
@@ -124,7 +124,9 @@
         </article>
       </div>
     </section>        
-    <!-- ===== SCROLL REVEAL ===== -->
+    
+    <!-- ===== FOOTER =====-->     
+    <%@ include file="footer.jsp" %>
     
     <!-- ===== MAIN JS ===== -->
     <script src="/resources/script/index.js"></script>

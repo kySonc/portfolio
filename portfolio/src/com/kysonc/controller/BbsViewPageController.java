@@ -28,6 +28,7 @@ public class BbsViewPageController extends HttpServlet {
 
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String bbsId = req.getParameter("bbsId");
+		
 		BbsService service = new BbsService(); //service 객체 생성
 		BbsDao bbsDao = BbsDao.getInstance();
 		BbsDto bbsDto = new BbsDto();

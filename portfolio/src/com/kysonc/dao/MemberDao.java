@@ -16,7 +16,7 @@ public class MemberDao {
 		
 	}
 	
-
+	//MemberDao 클래스 객체 생성 메소드
 	public static synchronized MemberDao getInstance() {
 		if (mDao == null) {
 			mDao = new MemberDao();
@@ -24,9 +24,9 @@ public class MemberDao {
 		return mDao;
 	}
 	
- 
+	//DB에 접속 컨넥션 메소드
 	public Connection getConnection() {
-		String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/portfolioDB?serverTimezone=Asia/Seoul&useSSL=false";
 		String id = "root", pw = "1234";
 		
 		try {
@@ -40,7 +40,7 @@ public class MemberDao {
 		return con;
 	}
 	
-
+	//JDBC 자원 닫는 메소드
 	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		if (rs != null) {
 			try {
@@ -65,17 +65,16 @@ public class MemberDao {
 		}
 	}
 	
-
+	//회원 가입 메소드
 	public int join(MemberDto mDto) {
 		con = this.getConnection();
 		StringBuffer query = new StringBuffer();
-		query.append("INSERT INTO member").append(" VALUES (?,?,?,?)");
+		query.append("INSERT INTO member").append(" VALUES (?,?,?)");
 		try {
 			pstmt = con.prepareStatement(query.toString());
 			pstmt.setString(1, mDto.getId());
 			pstmt.setString(2, mDto.getPw());
-			pstmt.setString(3, mDto.getName());
-			pstmt.setString(4, mDto.getEmail());
+			pstmt.setString(3, mDto.getName());			
 			result = pstmt.executeUpdate(); //result = 1 由ы꽩
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -85,7 +84,7 @@ public class MemberDao {
 		return result;
 	}
 	
- 
+	//로그인 메소드
 	public int login(String id, String pw) {
 		con = this.getConnection();
 		StringBuffer query = new StringBuffer();
@@ -111,7 +110,7 @@ public class MemberDao {
 		return -1; 
 	}
 
-
+		//회원 탈퇴 메소드
 		public String del(String id) {
 			con = this.getConnection();
 			String sql = "DELETE FROM member WHERE Id = ?";

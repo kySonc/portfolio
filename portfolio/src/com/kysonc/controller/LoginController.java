@@ -27,7 +27,7 @@ public class LoginController extends HttpServlet {
 		
 		MemberDao mDao = MemberDao.getInstance();
 		int loginResult = mDao.login(id, pw); //입력된 파라미터 값을 login 메소드로 확인 결과값 저장
-		
+		System.out.println("로그인 성공: " + loginResult);
 		if (loginResult == 1) {
 			req.setAttribute("loginResult", loginResult);
 			HttpSession session = req.getSession();

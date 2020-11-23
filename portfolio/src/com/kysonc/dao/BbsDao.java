@@ -25,7 +25,7 @@ public class BbsDao {
 	
 	//DB에 접속 컨넥션 메소드
 	public Connection getConnect() {
-		String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/portfolioDB?serverTimezone=Asia/Seoul&useSSL=false";
 		String id = "root", pw = "1234";
 		
 		try {
@@ -105,21 +105,23 @@ public class BbsDao {
 		return result;
 	}
 	
-	//DB에 게시글 등록 정보 저장 메소드
+	//DB에 게시글 등록 정보 저장 메소드1
 	public int write(BbsDto bbsDto) {
 		con = getConnect();
 		StringBuffer query = new StringBuffer();
 		query.append("INSERT INTO bbs ");
-		query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, bbsCategory, id) ");
-		query.append("VALUES (?, ?, ?, now(), 0, ?, ?)");
+		query.append("(bbsId, bbsTitle, bbsContent, bbsDate, bbsHit, bbsName, bbsEmail, bbsPhone, id) ");
+		query.append("VALUES (?, ?, ?, now(), 0, ?, ?, ?, ?)");
 		
 		try {
 			pstmt = con.prepareStatement(query.toString());
 			pstmt.setInt(1, bbsDto.getBbsId());
-			pstmt.setString(2, bbsDto.getBbsTitle());
-			pstmt.setString(3, bbsDto.getBbsContent());
-			pstmt.setString(4, bbsDto.getBbsCategory());
-			pstmt.setString(5, bbsDto.getId());
+			pstmt.setString(2, bbsDto.getBbsTitle().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
+			pstmt.setString(3, bbsDto.getBbsContent().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
+			pstmt.setString(4, bbsDto.getBbsName().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));			
+			pstmt.setString(5, bbsDto.getBbsEmail().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
+			pstmt.setString(6, bbsDto.getBbsPhone().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
+			pstmt.setString(7, bbsDto.getId().replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -147,7 +149,9 @@ public class BbsDao {
 					bbsDto.setBbsContent(rs.getString("bbsContent"));
 					bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 					bbsDto.setBbsHit(rs.getInt("bbsHit"));
-					bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+					bbsDto.setBbsName(rs.getString("bbsName"));
+					bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+					bbsDto.setBbsPhone(rs.getString("bbsPhone"));					
 					bbsDto.setId(rs.getString("id"));
 					list.add(bbsDto); 
 				}
@@ -195,7 +199,9 @@ public class BbsDao {
 				bbsDto.setBbsContent(rs.getString("bbscontent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsdate"));
 				bbsDto.setBbsHit(rs.getInt("bbshit"));
-				bbsDto.setBbsCategory(rs.getString("bbscategory"));
+				bbsDto.setBbsName(rs.getString("bbsname"));			
+				bbsDto.setBbsEmail(rs.getString("bbsemail"));
+				bbsDto.setBbsPhone(rs.getString("bbsphone"));
 				bbsDto.setId(rs.getString("id"));
 			}
 			
@@ -230,16 +236,21 @@ public class BbsDao {
 		StringBuffer query = new StringBuffer();
 		query.append("UPDATE bbs SET bbsTitle = ?, ");
 		query.append("bbsContent = ?, ");
-		query.append("bbsCategory = ? ");
+		query.append("bbsName = ?, ");
+		query.append("bbsEmail = ?, ");
+		query.append("bbsPhone = ? ");
 		query.append("WHERE bbsId = ?");
 		
 		try {
 			pstmt = con.prepareStatement(query.toString());
 			pstmt.setString(1, bbsDto.getBbsTitle());
 			pstmt.setString(2, bbsDto.getBbsContent());
-			pstmt.setString(3, bbsDto.getBbsCategory());
-			pstmt.setInt(4, bbsDto.getBbsId());
+			pstmt.setString(3, bbsDto.getBbsName());
+			pstmt.setString(4, bbsDto.getBbsEmail());
+			pstmt.setString(5, bbsDto.getBbsPhone());
+			pstmt.setInt(6, bbsDto.getBbsId());
 			result = pstmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

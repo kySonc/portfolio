@@ -2,8 +2,9 @@
 function signUpCheck() {
 	var regExpId = /^[a-z|A-Z|ㄱ-ㅎ|k-l|가-힝]/;
 	//var regExpId = /^([a-z|A-Z|ㄱ-ㅎ|k-l|가-힝]).{1,}$/;
+	//var regExpId = /^[a-zA-z0-9]{4,12}$/; 아이디는 영문 대소문자와 숫자 4~12자리로 입력해야한다
 	
-	var regExpPasswd = /^[0-9]$/;
+	var regExpPasswd = /^[0-9]*$/;
 	//var regExpPasswd = /^[0-9].{3,}$/;
 	
 	var regExpName = /^[가-힣]*$/;
@@ -33,3 +34,14 @@ function signUpCheck() {
 	}
   	form.submit();
 }
+
+// 공백확인 함수
+    function checkExistData(value, dataName) {
+        if (value == "") {
+            alert(dataName + " 입력해주세요!");
+            return false;
+        }
+        return true;
+    }
+
+

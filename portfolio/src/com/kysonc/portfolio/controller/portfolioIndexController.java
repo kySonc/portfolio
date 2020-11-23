@@ -1,19 +1,16 @@
-package com.kysonc.controller;
+package com.kysonc.portfolio.controller;
 
 import java.io.IOException;
-//import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import com.kysonc.dao.BbsDao;
-//import com.kysonc.dto.BbsDto;
 
 
-@WebServlet("/index.do")
-public class IndexController extends HttpServlet {
+@WebServlet("/portfolioIndex.do")
+public class portfolioIndexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Override
@@ -28,11 +25,7 @@ public class IndexController extends HttpServlet {
 	
 	public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		//BbsDao bbsDao = BbsDao.getInstance();
-		//List<BbsDto> list = bbsDao.selectList();			
-		//req.setAttribute("list", list);	
-					
-		RequestDispatcher rd = req.getRequestDispatcher("bbs.do"); 
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/portfolio.jsp"); 
 		rd.forward(req, resp);
 		
 	}

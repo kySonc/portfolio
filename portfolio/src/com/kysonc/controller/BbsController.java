@@ -37,13 +37,13 @@ public class BbsController extends HttpServlet {
 		String page_ = req.getParameter("p"); // 검색폼의 키값 "p"를 요청받는다 ..INT로 하면 NULL를 못받는다
 		
 		//전달이 안됐을 경우 기본 값으로 사용 
-		String field = "bbsTitle";
+		String field = "All";
 		
 		//값이 전달되면 null이 아니거나 빈문자 열이 아닐 경우 전달 받은 param f 그게아니면 bbsTitle 값을 갖는다
 		if(field_ != null && !field_.equals("")) {
 			field = field_; 
 		}else {
-			field_ = "bbsTitle";
+			field = "All";
 		}
 						
 		String query = "";

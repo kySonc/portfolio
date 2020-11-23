@@ -26,17 +26,16 @@ public class JoinController extends HttpServlet {
 				
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
+		String name = req.getParameter("name");		
 		
 		MemberDao mDao = MemberDao.getInstance(); //회원가입 메소드로 DB에 저장할수 있는 객체 생성
 		MemberDto mDto = new MemberDto(); //회원 정보를 저장하는 클래스 객체 생성
 		mDto.setId(id); //sigUp.jsp 페이지에서 넘겨 받은 파라미터 값을 MemberDto 클래스에 담는다
 		mDto.setPw(pw); 
 		mDto.setName(name);
-		mDto.setEmail(email);
-		int joinResult = mDao.join(mDto); //회원가입 메소드를 이용 BD에 저장 결과값(result=1)을 저장
 		
+		int joinResult = mDao.join(mDto); //회원가입 메소드를 이용 BD에 저장 결과값(result=1)을 저장
+		System.out.println("회원 가입 성공:" + joinResult);
 		//DB 저장 성공값이 1일때 
 		if (joinResult == 1) {
 			req.setAttribute("joinResult", joinResult); //joinRsesult = 1

@@ -38,7 +38,7 @@ article {
 #notice .noticeInfo .box {
   display: flex;
   border-bottom: 2px solid var(--text-animation-color);
-  width: 170px;
+  width: 150px;
   margin: 10px;
 }
 #notice .noticeInfo .box:nth-child(2) {
@@ -89,12 +89,15 @@ article {
   text-align: center;   
 }
 
-#notice .noticelist .letter p{  
+#notice .noticelist .letter p { 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space  : nowrap; 
   width: 200px;
-  text-align: left;  
+  text-align: left;    
+}
+#notice .noticelist .letter b p:hover{  
+  color: red;
 }
 
 /* paging */
@@ -186,5 +189,6 @@ article {
   #notice .noticeInfo,
   #notice .noticelist {
     width: 100%;
+    margin-bottom: 10px;
   }
 }

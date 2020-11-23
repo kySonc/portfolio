@@ -18,12 +18,13 @@ public class BbsService {
 		private Connection con;
 		private PreparedStatement pstmt;
 		private ResultSet rs;
+		private String sql;
 		
 	
 	
 		//DB에 접속 컨넥션 메소드
 		public Connection getConnect() {
-			String url = "jdbc:mysql://localhost:3306/great?serverTimezone=Asia/Seoul&useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/portfolioDB?serverTimezone=Asia/Seoul&useSSL=false";
 			String id = "root", pw = "1234";
 			
 			try {
@@ -75,15 +76,23 @@ public class BbsService {
 		return getBbsList("field", "", page);
 	}
 	
-	//검색어 또는 페이지 목록 표시 제한 요청
+	//검색어 또는 페이지 목록 표시 제한 요청	
 	public List<BbsDto> getBbsList(String field/*BBSTITLE, ID*/, String query/*A*/, int page){
-		
-		List<BbsDto> list= new ArrayList<>();
+		List<BbsDto> list = new ArrayList<>();
 		
 		//1, 11, 21, 31 --> 등차 수열 an = 1+(page-1)*10
 		//10, 20, 30, 40 --> page*10 1페이지 일 경우 10,
-		String sql="SELECT * FROM bbs WHERE  "+field+" LIKE ? ORDER BY bbsId DESC LIMIT ?, 5";
-		try {			
+		try {
+			
+			if(field.equals("All")) {
+				field = "";
+				sql ="SELECT * FROM bbs WHERE CONCAT(id, bbsTitle, bbsContent, bbsName) LIKE ? ORDER BY bbsId DESC LIMIT ?, 5";
+			}
+			
+			if(field.contentEquals("bbsTitle") || field.contentEquals("id")) {
+				sql="SELECT * FROM bbs WHERE  "+field+" LIKE ? ORDER BY bbsId DESC LIMIT ?, 5";
+			}
+								
 			con = getConnect();			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, "%"+query+"%");
@@ -97,18 +106,57 @@ public class BbsService {
 				bbsDto.setBbsContent(rs.getString("bbsContent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+				bbsDto.setBbsName(rs.getString("bbsName"));
+				bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				bbsDto.setBbsPhone(rs.getString("bbsPhone"));
 				bbsDto.setId(rs.getString("id"));
-				list.add(bbsDto); 
+				list.add(bbsDto);
+					
 			}
-			
+					
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, rs);
 		}
+		
 		return list;
-	}
+	}	
+		
+		
+		//List<BbsDto> list= new ArrayList<>();
+		
+		//1, 11, 21, 31 --> 등차 수열 an = 1+(page-1)*10
+		//10, 20, 30, 40 --> page*10 1페이지 일 경우 10,
+		//String sql="SELECT * FROM bbs WHERE  "+field+" LIKE ? ORDER BY bbsId DESC LIMIT ?, 5";
+		//try {			
+			//con = getConnect();			
+			//pstmt = con.prepareStatement(sql);
+			//pstmt.setString(1, "%"+query+"%");
+			//pstmt.setInt(2, (page-1)*5);			
+			//rs = pstmt.executeQuery();			
+			
+			//while (rs.next()) {
+				//BbsDto bbsDto = new BbsDto();
+				//bbsDto.setBbsId(rs.getInt("bbsId"));
+				//bbsDto.setBbsTitle(rs.getString("bbsTitle"));
+				//bbsDto.setBbsContent(rs.getString("bbsContent"));
+				//bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
+				//bbsDto.setBbsHit(rs.getInt("bbsHit"));
+				//bbsDto.setBbsName(rs.getString("bbsName"));
+				//bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				//bbsDto.setBbsPhone(rs.getString("bbsPhone"));
+				//bbsDto.setId(rs.getString("id"));
+				//list.add(bbsDto); 
+			//}
+			
+		//} catch (Exception e) {
+			//e.printStackTrace();
+		//} finally {
+			//close(con, pstmt, rs);
+		//}
+		//return list;
+	//}
 	
 	//검색에대한 게시글 수
 	public int getBbsCount() {
@@ -121,7 +169,16 @@ public class BbsService {
 		
 		int searchCount = 0;
 		
-		String sql="SELECT COUNT(BBSID) SEARCHCOUNT FROM bbs WHERE "+field+" LIKE ? ORDER BY bbsId DESC";
+		if(field.equals("All")) {
+			field = "";
+			sql ="SELECT COUNT(BBSID) SEARCHCOUNT FROM bbs WHERE CONCAT(id, bbsTitle, bbsContent, bbsName) LIKE ? ORDER BY bbsId DESC";
+		}
+		
+		if(field.contentEquals("bbsTitle") || field.contentEquals("id")) {
+			sql="SELECT COUNT(BBSID) SEARCHCOUNT FROM bbs WHERE "+field+" LIKE ? ORDER BY bbsId DESC";
+		}
+		
+		
 		
 		try {
 			con = getConnect();			
@@ -163,9 +220,10 @@ public class BbsService {
 				bbsDto.setBbsContent(rs.getString("bbsContent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
-				bbsDto.setId(rs.getString("id"));
-				
+				bbsDto.setBbsName(rs.getString("bbsName"));
+				bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				bbsDto.setBbsPhone(rs.getString("bbsPhone"));
+				bbsDto.setId(rs.getString("id"));				
 			}
 			
 		} catch (Exception e) {
@@ -193,7 +251,9 @@ public class BbsService {
 				bbsDto.setBbsContent(rs.getString("bbsContent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+				bbsDto.setBbsName(rs.getString("bbsName"));
+				bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				bbsDto.setBbsPhone(rs.getString("bbsPhone"));
 				bbsDto.setId(rs.getString("id"));
 				
 			}
@@ -224,7 +284,9 @@ public class BbsService {
 				bbsDto.setBbsContent(rs.getString("bbsContent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+				bbsDto.setBbsName(rs.getString("bbsName"));
+				bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				bbsDto.setBbsPhone(rs.getString("bbsPhone"));
 				bbsDto.setId(rs.getString("id"));
 		
 			}
@@ -241,7 +303,7 @@ public class BbsService {
 	//해당 bbsId의 마지막 bbsId 순번 구하기
 	public BbsDto getBbsLastCoList(String bbsId) {
 						
-		String sql = "SELECT * FROM BBS WHERE ? ORDER BY BBSID DESC LIMIT 0, 1"; //BBSID=1 보다 큰 BBSID 컬럼 구하기
+		String sql = "SELECT * FROM BBS WHERE ? ORDER BY BBSID DESC LIMIT 0, 1"; //BBSID=? 의 저장된 제일 큰 BBSID 구하기
 				
 		try {			
 			con = getConnect();			
@@ -255,7 +317,9 @@ public class BbsService {
 				bbsDto.setBbsContent(rs.getString("bbsContent"));
 				bbsDto.setBbsDate(rs.getTimestamp("bbsDate"));
 				bbsDto.setBbsHit(rs.getInt("bbsHit"));
-				bbsDto.setBbsCategory(rs.getString("bbsCategory"));
+				bbsDto.setBbsName(rs.getString("bbsName"));
+				bbsDto.setBbsEmail(rs.getString("bbsEmail"));
+				bbsDto.setBbsPhone(rs.getString("bbsPhone"));
 				bbsDto.setId(rs.getString("id"));					
 			}
 					

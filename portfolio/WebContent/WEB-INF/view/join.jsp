@@ -85,6 +85,9 @@
         </div>        
     </section>
     
+    <!-- ===== FOOTER =====-->     
+    <%@ include file="footer.jsp" %>
+    
     <!-- ===== VALIDATION ===== -->
     <script src="/resources/validation/member.js"></script>
     

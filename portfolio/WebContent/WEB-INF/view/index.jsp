@@ -62,7 +62,7 @@
             <h1>Welcome<span></span></h1>
             <h1>to<span></span></h1>
             <h1>Dream Tire<span></span></h1>
-            <a href="#Portfolio" type="button" class="cta">Portfolio</a>
+            <a href="portfolioIndex.do" type="button" class="cta">Portfolio</a>
           </div>
           <div class="tire-Search">
             <h2>타이어 찾기<span></span></h2>         
@@ -126,11 +126,11 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nfera Au7</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="#" class="price">50,000원</a>
                 </div>
               </div>
             </li>
@@ -151,11 +151,11 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nfera Ru5</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="#" class="price">65,000원</a>
                 </div>
               </div>
             </li>
@@ -176,11 +176,11 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nfera Au5</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="#" class="price">55,000원</a>
                 </div>
               </div>
             </li>
@@ -201,11 +201,11 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nfera Su1</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="#" class="price">57,000원</a>
                 </div>
               </div>
             </li>
@@ -226,11 +226,11 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nfera sur4G</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="#" class="price">45,700원</a>
                 </div>
               </div>
             </li>
@@ -251,164 +251,15 @@
                 <div class="detail-box">
                   <!--type---------------------->
                   <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
+                    <a href="productDetail.do">Nblue HD Plus</a>
+                    <span>205 - 45 - 17</span>
                   </div>
                   <!--price------------------->
-                  <a href="#" class="price">$23</a>
+                  <a href="productDetail.do" class="price">70,000원</a>
                 </div>
               </div>
-            </li>
-            <!--7--------------------------------->
-            <li class="item-g">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="#" class="price">$23</a>
-                </div>
-              </div>
-            </li>
-            <!--8--------------------------------->
-            <li class="item-h">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="#" class="price">$23</a>
-                </div>
-              </div>
-            </li>
-            <!--9--------------------------------->
-            <li class="item-i">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="#" class="price">$23</a>
-                </div>
-              </div>
-            </li>
-            <!--10--------------------------------->
-            <li class="item-j">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="productDetail.do" class="price">$23</a>
-                </div>
-              </div>
-            </li>
-            <!--11--------------------------------->
-            <li class="item-k">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="#" class="price">$23</a>
-                </div>
-              </div>
-            </li>
-            <!--12--------------------------------->
-            <li class="item-l">
-              <!--box slider------------------>
-              <div class="imgbox">
-                <!--img box------------------->
-                <div class="slide-img">
-                  <img src="/resources/images/t1.jpg" alt="j1" />
-                  <!--overlayer--------------->
-                  <div class="overlay">
-                    <!--buy btn----------------->
-                    <a href="productDetail.do" class="buy-btn">Buy Now</a>
-                  </div>
-                </div>
-                <!--detail box---------------->
-                <div class="detail-box">
-                  <!--type---------------------->
-                  <div class="type">
-                    <a href="productDetail.do">Rabbed Cardigan</a>
-                    <span>Noe Arrival</span>
-                  </div>
-                  <!--price------------------->
-                  <a href="#" class="price">$23</a>
-                </div>
-              </div>
-            </li>
+            </li>           
+            
           </ul>
         </div>
 
@@ -426,6 +277,7 @@
             soluta tempore dolorum, natus quae!
           </p>
         </div>
+        
         <div class="service-bottom">
           <div class="service-item1">            
             <div class="service-icon">
@@ -478,8 +330,10 @@
               asperiores explicabo vitae deserunt laborum incidunt repellat
               doloremque saepe!
             </p>
-          </div>
+          </div>         
         </div>
+        
+        
       </div>
     </section>
 
@@ -511,43 +365,26 @@
                 <h3><a href="index.do#admin">관리자</a></h3>                
               </div>
             </div>
-          </div>
-          
-     
+          </div>     
           <div class="noticelist">
-        <form action="bbs.do#notice">
-       <!-- <fieldset>
-          			<legend>게시글 검색</legend>
-          			<label>검색분류</label>
-          			<select name="f">
-				  			<option ${(param.f=="bbsTitle")?"selected":""} value="bbsTitle">제목</option>
-							<option ${(param.f=="id")?"selected":""} value="id">작성자</option>
-					</select>
-					<label>검색어</label>
-					<input type="text" name="q" value="${param.q}" />
-					<input type="submit" value="검색" />			    					 	
-			</fieldset> -->
-					
-			    
+        	<form action="bbs.do#notice" method="get">			    
 			    <div class="wrapper">
         			<div class="search_box">
             			<div class="dropdown">
                 			<div class="default_option">All</div>
                 			<ul>
-                    			<li><input type="hidden"><label>All</label></li>
-                    			<li><input type="radio" name="f" value="bbsTitle" id="bbsTitle"><label for="bbsTitle">제목</label></li>
-                    			<li><input type="radio" name="f" value="id" id="id"><label for="id">작성자</label></li>
+                    			<li><input type="hidden"/><label>All</label></li>
+                    			<li><label for="bbsTitle"><input type="radio" name="f" value="bbsTitle" id="bbsTitle">제목</label></li>
+                    			<li><label for="id"><input type="radio" name="f" value="id" id="id">작성자</label></li>
                 			</ul>
-            			</div>
-            			<div class="search_field">
-                			<input type="text" class="input" name="q" value="${param.q}" placeholder="Search">
-                			<input type="submit" value="&#xf002;" class="fas fa-search" />
-                		</div>
+            			</div>            			 
+                   		<div class="search_field">                   			
+                   			<input type="text" class="input" name="q" value="${param.q}" placeholder="Search" />
+                   			<input type="submit" value="&#xf002;" class="fas fa-search" />         			
+                   		</div>                		
                 	</div>
-                </div>
-				
-			</form>
-				  
+                </div>				
+			</form>				  
             <table>			  	            
               <tr>
                   <th>번호</th>
@@ -556,14 +393,15 @@
                   <th>작성자</th>
                   <th>작성일</th>
                   <th>조회</th>
-              </tr>
-		
-		     
-	<%-- <%			
+              </tr>		     
+<%--
+	 	<%			
 			List<BbsDto> list = (List<BbsDto>)request.getAttribute("list");
 			for(BbsDto n : list){
 				pageContext.setAttribute("n", n);			
-		 %> --%>
+		%>
+--%>
+
 			<!-- 5개의 게시글 표현 인덱스 begin="0" 부터 end="4" 까지 -->	
 			<c:forEach var="n" items="${list}" begin="0" end="4" >
               <tr>
@@ -676,16 +514,16 @@
               </div>
               <div class="text">
                 <h3>Email</h3>
-                <p>rkkr7d3421@temporary-mail.net</p>
+                <p>dlswhsqhr@gmail.com</p>
               </div>
             </div>
           </div>
           <div class="contactForm">
-            <form action="write.do" method="post">
+            <form action="write.do" name="frm" method="post">
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="id" required="required" />
+                    <input type="text" name="bbsName" required="required" />
                     <span class="text">Name</span>
                     <span class="line"></span>
                   </div>
@@ -701,14 +539,14 @@
               <div class="row100">
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="bbsEmail" required="required" />
                     <span class="text">Email</span>
                     <span class="line"></span>
                   </div>
                 </div>
                 <div class="col">
                   <div class="inputBox">
-                    <input type="text" name="" required="required" />
+                    <input type="text" name="bbsPhone" required="required" />
                     <span class="text">Mobile</span>
                     <span class="line"></span>
                   </div>
@@ -725,7 +563,7 @@
               </div>
               <div class="row100">
                 <div class="col">
-                  <input type="submit" value="Send" />                  
+                  <input type="button" value="Send" onclick="bbsCheck()"/>                  
                 </div>
                 <div class="col">                  
                   <input type="reset" value="reset" />
@@ -735,15 +573,17 @@
           </div>  
         </article>
       </div>
-    </section>
-
-    
+    </section>    
     
     <!-- ===== PORTFOLIO ===== -->
     
         
     <!-- ===== FOOTER =====-->     
-    <%@ include file="footer.jsp" %>    
+    <%@ include file="footer.jsp" %>
+    
+    
+    <!-- ===== VALIDATION ===== -->
+    <script src="/resources/validation/bbs.js"></script>    
 
     <!-- ===== Top JS ===== -->
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>    
